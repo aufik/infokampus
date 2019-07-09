@@ -17,22 +17,28 @@ class Auth extends CI_Controller {
 	public function login()
 	{
 		$username=$this->input->post('username');
-		// var_dump($username); die;
 		$password=md5($this->input->post('password'));
-		$uresult = $this->dbObject->get_user($username);
-		
+		$uresult = $this->dbObject->get_user('user_name', $username);
+		$uresult2 = $this->dbObject->get_user('user_pass', $password);
 
 		if (count($uresult) > 0)
-		{
-			foreach ($uresult as $row) {
-				$this->session->set_userdata('login', 1);
-				$this->session->set_userdata('user_name', $row->user_name);
-				redirect('admin/dashboard','refresh');
+		{	
+			if(count($uresult2) > 0){
+				foreach ($uresult as $row) {
+					$this->session->set_userdata('login', 1);
+					$this->session->set_userdata('user_name', $row->user_name);
+					$this->session->set_userdata('user_level', $row->user_level);
+					redirect('admin/dashboard','refresh');
+				}
+			}else{
+				$this->session->set_userdata('login', 0);
+				echo "<script> alert('password Salah...'); </script>";
+				redirect('auth','refresh');		
 			}
 		}
 		else
 		{	$this->session->set_userdata('login', 0);
-			echo "<script> alert('Username and Password Salah...'); </script>";
+			echo "<script> alert('Username dan password Salah...'); </script>";
             redirect('auth','refresh');
 		}
 

@@ -12,9 +12,9 @@ class Auth_model extends CI_Model
         return $this->db->insert($table, $data);
 	}
 
-	function get_user($username)
+	function get_user($fiel, $val)
 	{
-		$this->db->where('user_name', $username);
+		$this->db->where($fiel, $val );
     	$query = $this->db->get('user');
 		return $query->result();
 	}
