@@ -148,23 +148,19 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    JQUERY DATATABLES
-                    <small>Taken from <a href="https://datatables.net/" target="_blank">datatables.net</a></small>
+                    FORM VALIDATION
+                    <small>Taken from <a href="https://jqueryvalidation.org/" target="_blank">jqueryvalidation.org</a></small>
                 </h2>
             </div>
-            
-            <!-- Basic Examples -->
+
+            <!-- Advanced Validation -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>
-                                BASIC EXAMPLE
-                            </h2>
+                            <h2>ADVANCED VALIDATION</h2>
                             <ul class="header-dropdown m-r--5">
-                                <a href="<?=base_url();?>index.php/admin/lomba/tambah"><button type="button" class="btn btn-primary">Tambah Lomba Baru</button></a>
-
-                                <!-- <li class="dropdown">
+                                <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <i class="material-icons">more_vert</i>
                                     </a>
@@ -173,59 +169,59 @@
                                         <li><a href="javascript:void(0);">Another action</a></li>
                                         <li><a href="javascript:void(0);">Something else here</a></li>
                                     </ul>
-                                </li> -->
+                                </li>
                             </ul>
                         </div>
                         <div class="body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                    <thead>
-                                        <tr>
-                                            <th>NO</th>
-                                            <th>Judul</th>
-                                            <th>Gambar</th>
-                                            <th>Isi</th>
-                                            <th>Link</th>
-                                            <th>Deadline</th>
-                                            <th>Kategori</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>NO</th>
-                                            <th>Judul</th>
-                                            <th>Gambar</th>
-                                            <th>Isi</th>
-                                            <th>Link</th>
-                                            <th>Deadline</th>
-                                            <th>Kategori</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <?php
-                                        $no=1;
-                                            foreach($lomba as $lom):
-
-                                        ?>
-                                            <tr>
-                                                <td><?=$no;?></td>
-                                                <td><?=$lom->lomba_judul;?></td>
-                                                <td><?=$lom->lomba_gambar;?></td>
-                                                <td><?=$lom->lomba_isi;?></td>
-                                                <td><?=$lom->lomba_link ;?></td>
-                                                <td><?=$lom->lomba_deadline;?></td>
-                                                <td><?=$lom->lomba_kategori_nama;?></td>
-                                            </tr>
-                                            
-
-                                        <?php $no++; endforeach; ?>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <form id="form_advanced_validation" method="POST" action="<?=base_url();?>index.php/admin/lomba/tambah_proses">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="lomba_judul" maxlength="10" minlength="3" required>
+                                        <label class="form-label">Min/Max Length</label>
+                                    </div>
+                                    <div class="help-info">Min. 3, Max. 10 characters</div>
+                                </div>
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="lomba_judul2" min="10" max="200" required>
+                                        <label class="form-label">Min/Max Value</label>
+                                    </div>
+                                    <div class="help-info">Min. Value: 10, Max. Value: 200</div>
+                                </div>
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input type="url" class="form-control" name="url" required>
+                                        <label class="form-label">Url</label>
+                                    </div>
+                                    <div class="help-info">Starts with http://, https://, ftp:// etc</div>
+                                </div>
+                                <!-- <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="date" required>
+                                        <label class="form-label">Date</label>
+                                    </div>
+                                    <div class="help-info">YYYY-MM-DD format</div>
+                                </div>
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input type="number" class="form-control" name="number" required>
+                                        <label class="form-label">Number</label>
+                                    </div>
+                                    <div class="help-info">Numbers only</div>
+                                </div>
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="creditcard" pattern="[0-9]{13,16}" required>
+                                        <label class="form-label">Credit Card</label>
+                                    </div>
+                                    <div class="help-info">Ex: 1234-5678-9012-3456</div>
+                                </div> -->
+                                <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Basic Examples -->
+            <!-- #END# Advanced Validation -->
         </div>
     </section>

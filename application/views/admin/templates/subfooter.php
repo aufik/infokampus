@@ -37,8 +37,6 @@
     
 
 
-    <!-- Jquery Core Js -->
-    <script src="<?=base_url()?>assets/backoffice/plugins/jquery/jquery.min.js"></script>
 
     <!-- Jquery DataTable Plugin Js -->
     <script src="<?=base_url()?>assets/backoffice/plugins/jquery-datatable/jquery.dataTables.js"></script>
@@ -51,9 +49,23 @@
     <script src="<?=base_url()?>assets/backoffice/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
     <script src="<?=base_url()?>assets/backoffice/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
 
+    <!-- Jquery Validation Plugin Css -->
+    <script src="<?=base_url()?>assets/backoffice/plugins/jquery-validation/jquery.validate.js"></script>
+
+    <!-- JQuery Steps Plugin Js -->
+    <script src="<?=base_url()?>assets/backoffice/plugins/jquery-steps/jquery.steps.js"></script>
+
+    <!-- Sweet Alert Plugin Js -->
+    <script src="<?=base_url()?>assets/backoffice/plugins/sweetalert/sweetalert.min.js"></script>
+
+
+    
+    
+    
     <!-- Custom Js -->
     <script src="<?=base_url()?>assets/backoffice/js/pages/tables/jquery-datatable.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/admin.js"></script>
+    <script src="<?=base_url()?>assets/backoffice/js/pages/forms/form-validation.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/index.js"></script>
 
     <!-- Demo Js -->

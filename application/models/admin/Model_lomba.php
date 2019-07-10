@@ -38,7 +38,10 @@ class Model_lomba extends CI_Model
 
 	//tambahan
 	function get_general_2($tab, $tab2, $id, $id2){
-		return $this->db->query("select * from lomba, lomba_kategori where lomba.lomba_id = lomba_kategori.lomba_kategori_id")->result();
+		return $this->db->query("select * from lomba, lomba_kategori where lomba.lomba_kat_id = lomba_kategori.lomba_kategori_id and status='menunggu'")->result();
+	}
+	function get_general_3($tab, $tab2, $id, $id2){
+		return $this->db->query("select * from lomba, lomba_kategori where lomba.lomba_kat_id = lomba_kategori.lomba_kategori_id and status!='menunggu'")->result();
 	}
 }
 ?>
