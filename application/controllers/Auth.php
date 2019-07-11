@@ -44,6 +44,14 @@ class Auth extends CI_Controller {
 
 	}
 
+	public function register()
+	{
+	
+		$this->load->view('register');
+		
+		
+	}
+
 	public function logout()
 	{
 		$this->session->set_userdata('login', 0);

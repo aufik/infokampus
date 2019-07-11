@@ -13,7 +13,7 @@
 	          <li class="nav-item"><a class="nav-link" href="hosting.html">Events</a></li>
 	          <li class="nav-item"><a href="blog.html" class="nav-link">Kerjasama</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Kontak</a></li>
-	          <li class="nav-item cta"><a href="contact.html" class="nav-link"><span>Upload Lomba</span></a></li>
+	          <li class="nav-item cta"><a href="<?=base_url();?>index.php/auth" class="nav-link"><span>Upload Lomba</span></a></li>
 	        </ul>
 	      </div>
 	    </div>

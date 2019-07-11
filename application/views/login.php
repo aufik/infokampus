@@ -1,95 +1,173 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login - @infokampus</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="<?=base_url()?>assets/backoffice/images/icon/favicon.ico">
-    <link rel="stylesheet" href="<?=base_url()?>assets/backoffice/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/backoffice/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/backoffice/css/themify-icons.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/backoffice/css/metisMenu.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/backoffice/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/backoffice/css/slicknav.min.css">
-    <!-- amchart css -->
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-    <!-- others css -->
-    <link rel="stylesheet" href="<?=base_url()?>assets/backoffice/css/typography.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/backoffice/css/default-css.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/backoffice/css/styles.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/backoffice/css/responsive.css">
-    <!-- modernizr css -->
-    <script src="<?=base_url()?>assets/backoffice/js/vendor/modernizr-2.8.3.min.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>LOGIN - INFOKAMPUS</title>
+  <!-- Favicon -->
+  <link href="<?=base_url()?>assets/backoffice/img/brand/favicon.png" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="<?=base_url()?>assets/backoffice/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
+  <link href="<?=base_url()?>assets/backoffice/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="<?=base_url()?>assets/backoffice/css/argon-dashboard.css?v=1.1.0" rel="stylesheet" />
 </head>
 
-<body>
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <!-- preloader area start -->
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
-    <!-- preloader area end -->
-    <!-- login area start -->
-    <div class="login-area">
-        <div class="container">
-            <div class="login-box ptb--100">
-                <form method="post" action="<?=base_url()?>index.php/auth/login">
-                    <div class="login-form-head">
-                        <h4>Sign In</h4>
-                        <p>Hello there, Sign in and start managing your Admin Template</p>
-                    </div>
-                    <div class="login-form-body">
-                        <div class="form-gp">
-                            <label for="exampleInputEmail1">Username</label>
-                            <input type="text" name="username" id="exampleInputEmail1">
-                            <i class="ti-user"></i>
-                        </div>
-                        <div class="form-gp">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" name="password" id="exampleInputPassword1">
-                            <i class="ti-lock"></i>
-                        </div>
-                        <div class="row mb-4 rmber-area">
-                            <div class="col-6">
-                                <div class="custom-control custom-checkbox mr-sm-2">
-                                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                    <label class="custom-control-label" for="customControlAutosizing">Remember Me</label>
-                                </div>
-                            </div>
-                            <div class="col-6 text-right">
-                                <a href="#">Forgot Password?</a>
-                            </div>
-                        </div>
-                        <div class="submit-btn-area">
-                            <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
-                        </div>
-                        <div class="form-footer text-center mt-5">
-                            <p class="text-muted">Don't have an account? <a href="register.html">Sign up</a></p>
-                        </div>
-                    </div>
-                </form>
+<body class="bg-default">
+  <div class="main-content">
+    <!-- Navbar -->
+    <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
+      <div class="container px-4">
+        <a class="navbar-brand" href="../index.html">
+          <img src="<?=base_url()?>assets/backoffice/img/brand/white.png" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+          <!-- Collapse header -->
+          <div class="navbar-collapse-header d-md-none">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="../index.html">
+                  <img src="<?=base_url()?>assets/backoffice/img/brand/blue.png">
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
             </div>
+          </div>
+          <!-- Navbar items -->
+          <ul class="navbar-nav ml-auto">
+             <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="<?=base_url();?>">
+                <i class="ni ni-planet"></i>
+                <span class="nav-link-inner--text">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="<?=base_url();?>index.php/auth/register">
+                <i class="ni ni-circle-08"></i>
+                <span class="nav-link-inner--text">Register</span>
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
+    <!-- Header -->
+    <div class="header bg-gradient-primary py-7 py-lg-8">
+      <div class="container">
+        <div class="header-body text-center mb-7">
+          <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6">
+              <h1 class="text-white">Welcome!</h1>
+              <p class="text-lead text-light">Use these awesome forms to login or create new account in your project for free.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
     </div>
-    <!-- login area end -->
-
-    <!-- jquery latest version -->
-    <script src="<?=base_url()?>assets/backoffice/js/vendor/jquery-2.2.4.min.js"></script>
-    <!-- bootstrap 4 js -->
-    <script src="<?=base_url()?>assets/backoffice/js/popper.min.js"></script>
-    <script src="<?=base_url()?>assets/backoffice/js/bootstrap.min.js"></script>
-    <script src="<?=base_url()?>assets/backoffice/js/owl.carousel.min.js"></script>
-    <script src="<?=base_url()?>assets/backoffice/js/metisMenu.min.js"></script>
-    <script src="<?=base_url()?>assets/backoffice/js/jquery.slimscroll.min.js"></script>
-    <script src="<?=base_url()?>assets/backoffice/js/jquery.slicknav.min.js"></script>
-    
-    <!-- others plugins -->
-    <script src="<?=base_url()?>assets/backoffice/js/plugins.js"></script>
-    <script src="<?=base_url()?>assets/backoffice/js/scripts.js"></script>
+    <!-- Page content -->
+    <div class="container mt--8 pb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7">
+          <div class="card bg-secondary shadow border-0">
+            <div class="card-header bg-transparent pb-5">
+              <div class="text-muted text-center mt-2 mb-3"><small>Sign in with</small></div>
+              <div class="btn-wrapper text-center">
+                <a href="#" class="btn btn-neutral btn-icon">
+                  <span class="btn-inner--icon"><img src="<?=base_url()?>assets/backoffice/img/icons/common/github.svg"></span>
+                  <span class="btn-inner--text">Github</span>
+                </a>
+                <a href="#" class="btn btn-neutral btn-icon">
+                  <span class="btn-inner--icon"><img src="<?=base_url()?>assets/backoffice/img/icons/common/google.svg"></span>
+                  <span class="btn-inner--text">Google</span>
+                </a>
+              </div>
+            </div>
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+                <small>Or sign in with credentials</small>
+              </div>
+              <form method="post" action="<?=base_url()?>index.php/auth/login"> 
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="username" name="username" type="text">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Password" name="password" type="password">
+                  </div>
+                </div>
+                <div class="custom-control custom-control-alternative custom-checkbox">
+                  <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
+                  <label class="custom-control-label" for=" customCheckLogin">
+                    <span class="text-muted">Remember me</span>
+                  </label>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary my-4">Sign in</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-6">
+              <a href="#" class="text-light"><small>Forgot password?</small></a>
+            </div>
+            <div class="col-6 text-right">
+              <a href="<?=base_url();?>index.php/auth/register" class="text-light"><small>Create new account</small></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="py-5">
+      <div class="container">
+        <div class="row align-items-center justify-content-xl-between">
+          <div class="col-xl-6">
+            <div class="copyright text-center text-xl-left text-muted">
+              © 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">INFOKAMPUS</a>
+            </div>
+          </div>         
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!--   Core   -->
+  <script src="<?=base_url()?>assets/backoffice/js/plugins/jquery/dist/jquery.min.js"></script>
+  <script src="<?=base_url()?>assets/backoffice/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!--   Optional JS   -->
+  <!--   Argon JS   -->
+  <script src="<?=base_url()?>assets/backoffice/js/argon-dashboard.min.js?v=1.1.0"></script>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS &&
+      TrackJS.install({
+        token: "ee6fab19c5a04ac1a32a645abde4613a",
+        application: "argon-dashboard-free"
+      });
+  </script>
 </body>
 
 </html>
