@@ -58,15 +58,21 @@
     <!-- Sweet Alert Plugin Js -->
     <script src="<?=base_url()?>assets/backoffice/plugins/sweetalert/sweetalert.min.js"></script>
 
+    <!-- Ckeditor -->
+        <script src="<?=base_url()?>assets/backoffice/plugins/ckeditor/ckeditor.js"></script>
 
-    
-    
+    <!-- TinyMCE -->
+    <script src="<?=base_url()?>assets/backoffice/plugins/tinymce/tinymce.js"></script>
+
     
     <!-- Custom Js -->
     <script src="<?=base_url()?>assets/backoffice/js/pages/tables/jquery-datatable.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/admin.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/forms/form-validation.js"></script>
+    <script src="<?=base_url()?>assets/backoffice/js/pages/forms/editors.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/index.js"></script>
+    
+    
 
     <!-- Demo Js -->
     <script src="<?=base_url()?>assets/backoffice/js/demo.js"></script>

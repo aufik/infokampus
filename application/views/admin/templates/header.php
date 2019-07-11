@@ -24,6 +24,26 @@
 
     <!-- Morris Chart Css-->
     <link href="<?=base_url()?>assets/backoffice/plugins/morrisjs/morris.css" rel="stylesheet" />
+     <!-- Colorpicker Css -->
+     <link href="<?=base_url()?>assets/backoffice/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+
+    <!-- Dropzone Css -->
+    <link href="<?=base_url()?>assets/backoffice/plugins/dropzone/dropzone.css" rel="stylesheet">
+
+    <!-- Multi Select Css -->
+    <link href="<?=base_url()?>assets/backoffice/plugins/multi-select/css/multi-select.css" rel="stylesheet">
+
+    <!-- Bootstrap Spinner Css -->
+    <link href="<?=base_url()?>assets/backoffice/plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+
+    <!-- Bootstrap Tagsinput Css -->
+    <link href="<?=base_url()?>assets/backoffice/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+
+    <!-- Bootstrap Select Css -->
+    <link href="<?=base_url()?>assets/backoffice/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+    <!-- noUISlider Css -->
+    <link href="<?=base_url()?>assets/backoffice/plugins/nouislider/nouislider.min.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="<?=base_url()?>assets/backoffice/css/style.css" rel="stylesheet">

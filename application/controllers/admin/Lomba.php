@@ -34,7 +34,9 @@ class Lomba extends CI_Controller {
 		$this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/footer');
         $this->load->view('admin/lomba/tambah');
+        // $this->load->view('admin/lomba/test');
         $this->load->view('admin/templates/subfooter');
+        
 
     }
     public function tambah_proses(){
@@ -70,10 +72,35 @@ class Lomba extends CI_Controller {
         $this->load->view('admin/templates/header');
 		$this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/footer');
-        $this->load->view('admin/lomba/tampil', $data);
+        $this->load->view('admin/lomba/tampil_permintaan', $data);
         $this->load->view('admin/templates/subfooter');
     }
+    public function penentuan($param="", $param2=""){
+        
+        $data = array(
+            'status' => $param2
+        );
 
+        if($this->dbObject->update_general($this->lomba, 'lomba_id', $param, $data )===TRUE)		// using direct parameter
+        {
+            ?>
+            <script> 
+                alert(" Diterima. ");
+                location.replace("<?=base_url()?>index.php/admin/lomba/"); 
+            </script>
+            <?php
+            //redirect('master/jabatan','refresh');
+        }
+        else {
+            ?>
+            <script> 
+                alert(" Gagal Proses. ");
+                location.replace("<?=base_url()?>index.php/admin/lomba/permintaan_lomba");   
+            </script>
+            <?php
+            //redirect('master/jabatan_insert','refresh');
+        }
+    }
 
 
 }

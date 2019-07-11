@@ -148,19 +148,23 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    Lomba
-                    <small>Lomba / Permintaan Lomba / Tambah Lomba</small>
+                    JQUERY DATATABLES
+                    <small>Taken from <a href="https://datatables.net/" target="_blank">datatables.net</a></small>
                 </h2>
             </div>
-
-            <!-- Advanced Validation -->
+            
+            <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Formulir Lomba</h2>
-                            <!-- <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
+                            <h2>
+                                BASIC EXAMPLE
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <a href="<?=base_url();?>index.php/admin/lomba/tambah"><button type="button" class="btn btn-primary">Tambah Lomba Baru</button></a>
+
+                                <!-- <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <i class="material-icons">more_vert</i>
                                     </a>
@@ -169,56 +173,87 @@
                                         <li><a href="javascript:void(0);">Another action</a></li>
                                         <li><a href="javascript:void(0);">Something else here</a></li>
                                     </ul>
-                                </li>
-                            </ul> -->
+                                </li> -->
+                            </ul>
                         </div>
                         <div class="body">
-                            <form id="form_advanced_validation" method="POST" action="<?=base_url();?>index.php/admin/lomba/tambah_proses">
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="lomba_judul" maxlength="255" minlength="1" required>
-                                        <label class="form-label">Judul</label>
-                                    </div>
-                                    <div class="help-info">Min. 1, Max. 255 characters</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <select class="form-control show-tick" data-live-search="true">
-                                        <option>Hot Dog, Fries and a Soda</option>
-                                        <option>Burger, Shake and a Smile</option>
-                                        <option>Sugar, Spice and all things nice</option>
-                                    </select>
-                                    </div>
-                                    <div class="help-info">Min. 1, Max. 255 characters</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="lomba_link" maxlength="255" minlength="1" >
-                                        <label class="form-label">LINK</label>
-                                    </div>
-                                    <div class="help-info">Min. 1, Max. 255 characters</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="lomba_deadline" required>
-                                        <label class="form-label">Deadline</label>
-                                    </div>
-                                    <div class="help-info">YYYY-MM-DD format</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <textarea id="ckeditor" Value="Isi">
-                                        </textarea>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>NO</th>
+                                            <th>Judul</th>
+                                            <th>Gambar</th>
+                                            <th>Isi</th>
+                                            <th>Link</th>
+                                            <th>Deadline</th>
+                                            <th>Kategori</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>NO</th>
+                                            <th>Judul</th>
+                                            <th>Gambar</th>
+                                            <th>Isi</th>
+                                            <th>Link</th>
+                                            <th>Deadline</th>
+                                            <th>Kategori</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <?php
+                                        $no=1;
+                                            foreach($lomba as $lom):
 
-                                    </div>
-                                </div>
-                                
-                                <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
-                            </form>
+                                        ?>
+                                            <tr>
+                                                <td><?=$no;?></td>
+                                                <td><?=$lom->lomba_judul;?></td>
+                                                <td><?=$lom->lomba_gambar;?></td>
+                                                <td><?=$lom->lomba_isi;?></td>
+                                                <td><?=$lom->lomba_link ;?></td>
+                                                <td><?=$lom->lomba_deadline;?></td>
+                                                <td><?=$lom->lomba_kategori_nama;?></td>
+                                                <Td>
+                                                    <a href="<?=base_url();?>index.php/admin/lomba/penentuan/<?=$lom->lomba_id?>/Diterima"><div class="button-demo "><button type="button" class="btn btn-primary">Terima</button></div></a>
+                                                    <div class="button-demo js-modal-buttons">
+                                                        <button type="button" data-color="red" class="btn bg-red waves-effect">Tolak</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+
+                                        <?php $no++; endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Advanced Validation -->
+            <!-- #END# Basic Examples -->
+            <div class="modal fade" id="mdModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="defaultModalLabel">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales orci ante, sed ornare eros vestibulum ut. Ut accumsan
+                            vitae eros sit amet tristique. Nullam scelerisque nunc enim, non dignissim nibh faucibus ullamcorper.
+                            Fusce pulvinar libero vel ligula iaculis ullamcorper. Integer dapibus, mi ac tempor varius, purus
+                            nibh mattis erat, vitae porta nunc nisi non tellus. Vivamus mollis ante non massa egestas fringilla.
+                            Vestibulum egestas consectetur nunc at ultricies. Morbi quis consectetur nunc.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-link waves-effect">SAVE CHANGES</button>
+                            <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>

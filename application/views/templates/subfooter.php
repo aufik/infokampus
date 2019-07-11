@@ -35,7 +35,9 @@
 
     <!-- Custom Js -->
     <script src="<?=base_url()?>assets/backoffice/js/admin.js"></script>
+    <script src="<?=base_url()?>assets/backoffice/js/pages/ui/modals.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/index.js"></script>
+    
 
     <!-- Demo Js -->
     <script src="<?=base_url()?>assets/backoffice/js/demo.js"></script>
