@@ -42,15 +42,18 @@
     <!-- Bootstrap Select Css -->
     <link href="<?=base_url()?>assets/backoffice/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
-    <!-- noUISlider Css -->
-    <link href="<?=base_url()?>assets/backoffice/plugins/nouislider/nouislider.min.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="<?=base_url()?>assets/backoffice/css/style.css" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?=base_url()?>assets/backoffice/css/themes/all-themes.css" rel="stylesheet" />
+    <!-- Wait Me Css -->
+    <link href="<?=base_url()?>assets/backoffice/plugins/waitme/waitMe.css" rel="stylesheet" />
 
+    <!-- Bootstrap Select Css -->
+    <link href="<?=base_url()?>assets/backoffice/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    
     <!-- JQuery DataTable Css -->
     <link href="<?=base_url()?>assets/backoffice/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
 </head>

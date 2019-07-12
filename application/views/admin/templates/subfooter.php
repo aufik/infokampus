@@ -64,6 +64,32 @@
     <!-- TinyMCE -->
     <script src="<?=base_url()?>assets/backoffice/plugins/tinymce/tinymce.js"></script>
 
+    <!-- Slimscroll Plugin Js -->
+    <script src="<?=base_url()?>assets/backoffice/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Bootstrap Colorpicker Js -->
+    <script src="<?=base_url()?>assets/backoffice/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+
+    <!-- Dropzone Plugin Js -->
+    <script src="<?=base_url()?>assets/backoffice/plugins/dropzone/dropzone.js"></script>
+
+    <!-- Input Mask Plugin Js -->
+    <script src="<?=base_url()?>assets/backoffice/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+
+    <!-- Multi Select Plugin Js -->
+    <script src="<?=base_url()?>assets/backoffice/plugins/multi-select/js/jquery.multi-select.js"></script>
+
+    <!-- Jquery Spinner Plugin Js -->
+    <script src="<?=base_url()?>assets/backoffice/plugins/jquery-spinner/js/jquery.spinner.js"></script>
+
+
+
+    <!-- Bootstrap Tags Input Plugin Js -->
+    <script src="<?=base_url()?>assets/backoffice/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+    <!-- noUISlider Plugin Js -->
+    <script src="<?=base_url()?>assets/backoffice/plugins/nouislider/nouislider.js"></script>
+    
     
     <!-- Custom Js -->
     <script src="<?=base_url()?>assets/backoffice/js/pages/tables/jquery-datatable.js"></script>
@@ -71,6 +97,11 @@
     <script src="<?=base_url()?>assets/backoffice/js/pages/forms/form-validation.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/forms/editors.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/index.js"></script>
+    <script src="<?=base_url()?>assets/backoffice/js/pages/forms/basic-form-elements.js"></script>
+    <script src="<?=base_url()?>assets/backoffice/js/pages/forms/advanced-form-elements.js"></script>
+    
+
+    
     
     
 

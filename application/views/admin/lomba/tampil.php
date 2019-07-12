@@ -188,6 +188,10 @@
                                             <th>Link</th>
                                             <th>Deadline</th>
                                             <th>Kategori</th>
+                                            <th>Tiket</th>
+                                            <th>Alamat</th>
+                                            <th>Status</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -199,6 +203,10 @@
                                             <th>Link</th>
                                             <th>Deadline</th>
                                             <th>Kategori</th>
+                                            <th>Tiket</th>
+                                            <th>Alamat</th>
+                                            <th>Status</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -209,12 +217,24 @@
                                         ?>
                                             <tr>
                                                 <td><?=$no;?></td>
-                                                <td><?=$lom->lomba_judul;?></td>
-                                                <td><?=$lom->lomba_gambar;?></td>
-                                                <td><?=$lom->lomba_isi;?></td>
+                                                <td><?=substr($lom->lomba_judul, 0, 35);?>...</td>
+                                                <td><img src="<?=base_url();?>assets/img/poster/<?=$lom->lomba_gambar;?>" width="50" height="auto"></td>
+                                                <td><?=substr($lom->lomba_isi, 0, 75);?>...</td>
                                                 <td><?=$lom->lomba_link ;?></td>
                                                 <td><?=$lom->lomba_deadline;?></td>
                                                 <td><?=$lom->lomba_kategori_nama;?></td>
+                                                <td><?=$lom->lomba_tiket;?></td>
+                                                <td><?=$lom->lomba_alamat;?></td>
+                                                <td><?php
+                                                
+                                                        if($lom->status == "Diterima"){
+                                                            
+                                                            echo "<div class='text-success'>".$lom->status."</div>";
+                                                        }
+                                                        else if($lom->status == "Ditolak")
+                                                            echo "<div class='text-danger'>".$lom->status."</div>";
+                                                ?></td>
+                                                <td><a href="<?=base_url();?>index.php/admin/lomba/edit_lomba/<?=$lom->lomba_id?>"><button type="button" class="btn btn-info">Edit</button></td>
                                             </tr>
                                             
 

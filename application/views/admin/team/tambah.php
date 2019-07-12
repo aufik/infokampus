@@ -148,8 +148,8 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    Lomba
-                    <small>Lomba / Permintaan Lomba / Tambah Lomba</small>
+                    Team
+                    
                 </h2>
             </div>
 
@@ -190,59 +190,34 @@
                                     </div>
                                     <div class="help-info">Min. 1, Max. 255 characters</div>
                                 </div> -->
-                            <form id="form_advanced_validation frmFileUpload" method="POST" action="<?=base_url();?>index.php/admin/lomba/tambah_proses"  enctype="multipart/form-data">
+                            <form id="form_advanced_validation frmFileUpload" method="POST" action="<?=base_url();?>index.php/admin/team/tambah/do_create"  enctype="multipart/form-data">
                                 
                             <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="file" name="poster" class="form-control" value="upload">
+                                        <input type="file" name="foto" class="form-control" value="upload">
                                     </div>
                                     <div class="help-info">Min. 1, Max. 255 characters</div>
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="lomba_judul" maxlength="255" minlength="1" required>
-                                        <label class="form-label">Judul</label>
+                                        <input type="text" class="form-control" name="nama" maxlength="255" minlength="1" required>
+                                        <label class="form-label">Nama</label>
                                     </div>
                                     <div class="help-info">Min. 1, Max. 255 characters</div>
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <select class="form-control show-tick" data-live-search="true" name="lomba_kat_id">
-                                        <?php foreach($kategori as $kat):?>
-                                        
-                                            <option value="<?=$kat->lomba_kategori_id?>"><?=$kat->lomba_kategori_nama?></option>
-                                        <?php endforeach;?>
-                                    </select>
+                                        <input type="text" class="form-control" name="jabatan" maxlength="255" minlength="1" required>
+                                        <label class="form-label">Jabatan</label>
                                     </div>
                                     <div class="help-info">Min. 1, Max. 255 characters</div>
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="lomba_link" maxlength="255" minlength="1" >
-                                        <label class="form-label">LINK</label>
+                                        <input type="text" class="form-control" name="isi" maxlength="255" minlength="1" required>
+                                        <label class="form-label">Isi</label>
                                     </div>
                                     <div class="help-info">Min. 1, Max. 255 characters</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="lomba_alamat" maxlength="255" minlength="1" required>
-                                        <label class="form-label">Alamat</label>
-                                    </div>
-                                    <div class="help-info">Min. 1, Max. 255 characters</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="lomba_deadline" required>
-                                        <label class="form-label">Deadline</label>
-                                    </div>
-                                    <div class="help-info">YYYY-MM-DD format</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <textarea id="ckeditor" Value="Isi" name="lomba_isi">
-                                        </textarea>
-
-                                    </div>
                                 </div>
                                 
                                 

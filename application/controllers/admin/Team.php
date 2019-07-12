@@ -16,61 +16,65 @@ class Team extends CI_Controller {
 	public function index()
 	{
 		$data['team'] = $this->dbObject->get_general($this->tbl);
+		
 		$this->load->view('admin/templates/header');
 		$this->load->view('admin/templates/sidebar');
-		$this->load->view('admin/team/index', $data);
 		$this->load->view('admin/templates/footer');
+		$this->load->view('admin/team/tampil', $data);
+		$this->load->view('admin/templates/subfooter');
+		
 	}
 
-	public function create($param1='')
+	public function tambah($param1='')
 	{
-		$data['kategori'] = $this->dbObject->get_general('media_kategori');
 		$this->load->view('admin/templates/header');
 		$this->load->view('admin/templates/sidebar');
-		$this->load->view('admin/team/create');
 		$this->load->view('admin/templates/footer');
-		if ($param1 == 'do_create') {
-			$team_nama=trim($this->input->post('team_nama'));
-			$team_jabatan=trim($this->input->post('team_jabatan'));
-			$team_isi=$this->input->post('team_isi');
-			$config['upload_path']          = 'assets/img/team';
-	        $config['allowed_types']        = 'gif|jpg|png|jpeg';
-	        $config['max_size']             = 10000;
-	        
-	        $this->load->library('upload', $config);
+		$this->load->view('admin/team/tambah');
+		$this->load->view('admin/templates/subfooter');
 
-	        if ( ! $this->upload->do_upload('team_image'))
-	        {
-                $error = array('error' => $this->upload->display_errors());
-                var_dump($error);die;
-	        }
-	        else
-	        {
-		        $data = array(
-					'team_nama' => $team_nama,
-					'team_image' => $this->upload->data('file_name'),
-					'team_isi' => $team_isi,
-					'team_jabatan' => $team_jabatan,
-					//'team_created_by' => $this->session->userdata('user_id'),
-					'team_created_time' => date('Y-m-d H:i:s')
-				);
-	        }
+
+		if ($param1 == 'do_create') {
+			$config['upload_path']          = './assets/img/team';
+		$config['allowed_types']        = 'gif|jpg|png';
+		$config['max_size']             = (99999 * 9999);
+		$config['max_width']            = (99999 * 9999);
+		$config['max_height']           = (99999 * 9999);
+ 
+		$this->load->library('upload', $config);
+ 
+		if ( ! $this->upload->do_upload('foto')){
+			}
+
+			$team_nama = trim($this->input->post('nama'));
+			$team_jabatan=trim($this->input->post('jabatan'));
+			$team_isi=trim($this->input->post('isi'));
+			$team_image=trim($this->input->post('foto'));
+			$data = array(
+				'team_nama' => $team_nama, 
+				'team_jabatan' => $team_jabatan,
+				'team_isi' => $team_isi, 
+				'team_image' => $this->upload->data('file_name')
+			);
 			if($this->dbObject->create_general($this->tbl, $data)===TRUE)		// using direct parameter
 			{
+				
 				?>
-				<script>
+				<script> 
 					alert(" Data berhasil disimpan. ");
-					location.replace("<?=base_url()?>admin/team/");
+					location.replace("<?=base_url()?>index.php/admin/team/"); 
 				</script>
 				<?php
+				//redirect('kepegawaian/jabatan','refresh');
 			}
 			else {
 				?>
-				<script>
+				<script> 
 					alert(" Data gagal disimpan. ");
-					location.replace("<?=base_url()?>admin/team/");
+					location.replace("<?=base_url()?>index.php/admin/team/tambah"); 
 				</script>
 				<?php
+				//redirect('kepegawaian/jabatan_insert','refresh');
 			}
 		}
 	}

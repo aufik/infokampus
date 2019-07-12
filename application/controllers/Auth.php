@@ -26,6 +26,7 @@ class Auth extends CI_Controller {
 			if(count($uresult2) > 0){
 				foreach ($uresult as $row) {
 					$this->session->set_userdata('login', 1);
+					$this->session->set_userdata('user_id', $row->user_id);
 					$this->session->set_userdata('user_name', $row->user_name);
 					$this->session->set_userdata('user_level', $row->user_level);
 					redirect('admin/dashboard','refresh');

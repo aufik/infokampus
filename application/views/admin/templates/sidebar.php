@@ -196,6 +196,17 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                    <a href="<?=base_url();?>index.php/admin/team">    
+                            <i class="material-icons">home</i>
+                            <span>Team</span>
+                        </a>
+                    </li>
+                    <a href="<?=base_url();?>index.php/admin/kontak">    
+                            <i class="material-icons">home</i>
+                            <span>Kontak</span>
+                        </a>
+                    </li>
                     
                 </ul>
             </div>

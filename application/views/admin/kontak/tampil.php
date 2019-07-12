@@ -148,19 +148,23 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    Lomba
-                    <small>Lomba / Permintaan Lomba / Tambah Lomba</small>
+                    Team
+                    
                 </h2>
             </div>
-
-            <!-- Advanced Validation -->
+            
+            <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Formulir Lomba</h2>
-                            <!-- <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
+                            <h2>
+                                Tabel Team
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <a href="<?=base_url();?>index.php/admin/team/tambah"><button type="button" class="btn btn-primary">Tambah Team Baru</button></a>
+
+                                <!-- <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <i class="material-icons">more_vert</i>
                                     </a>
@@ -169,90 +173,71 @@
                                         <li><a href="javascript:void(0);">Another action</a></li>
                                         <li><a href="javascript:void(0);">Something else here</a></li>
                                     </ul>
-                                </li>
-                            </ul> -->
+                                </li> -->
+                            </ul>
                         </div>
                         <div class="body">
-                        <!-- class="dropzone" -->
-                        <!-- <div class="form-group form-float "  class="">
-                                    <div class="form-line">
-                                            <div class="dz-message">
-                                            <div class="drag-icon-cph">
-                                                <i class="material-icons">touch_app</i>
-                                            </div>
-                                            <h3>Drop files here or click to upload.</h3>
-                                            <em>(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</em>
-                                        </div>
-                                        <div class="fallback ">
-                                            <input name="file" type="file" multiple />
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="help-info">Min. 1, Max. 255 characters</div>
-                                </div> -->
-                            <form id="form_advanced_validation frmFileUpload" method="POST" action="<?=base_url();?>index.php/admin/lomba/tambah_proses"  enctype="multipart/form-data">
-                                
-                            <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="file" name="poster" class="form-control" value="upload">
-                                    </div>
-                                    <div class="help-info">Min. 1, Max. 255 characters</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="lomba_judul" maxlength="255" minlength="1" required>
-                                        <label class="form-label">Judul</label>
-                                    </div>
-                                    <div class="help-info">Min. 1, Max. 255 characters</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <select class="form-control show-tick" data-live-search="true" name="lomba_kat_id">
-                                        <?php foreach($kategori as $kat):?>
-                                        
-                                            <option value="<?=$kat->lomba_kategori_id?>"><?=$kat->lomba_kategori_nama?></option>
-                                        <?php endforeach;?>
-                                    </select>
-                                    </div>
-                                    <div class="help-info">Min. 1, Max. 255 characters</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="lomba_link" maxlength="255" minlength="1" >
-                                        <label class="form-label">LINK</label>
-                                    </div>
-                                    <div class="help-info">Min. 1, Max. 255 characters</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="lomba_alamat" maxlength="255" minlength="1" required>
-                                        <label class="form-label">Alamat</label>
-                                    </div>
-                                    <div class="help-info">Min. 1, Max. 255 characters</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="lomba_deadline" required>
-                                        <label class="form-label">Deadline</label>
-                                    </div>
-                                    <div class="help-info">YYYY-MM-DD format</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <textarea id="ckeditor" Value="Isi" name="lomba_isi">
-                                        </textarea>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                    <thead>
+                                    <tr>
+                                            <th>NO</th>
+                                            <th>Nama</th>
+                                            <th>Email</th>
+                                            <th>HP </th>
+                                            <th>Pesan</th>
+                                            <th>Waktu</th>
+                                            <th>Status</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                    <tr>
+                                            <th>NO</th>
+                                            <th>Nama</th>
+                                            <th>Email</th>
+                                            <th>HP </th>
+                                            <th>Pesan</th>
+                                            <th>Waktu</th>
+                                            <th>Status</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <?php
+                                        $no=1;
+                                            foreach($kontak as $lom):
 
-                                    </div>
-                                </div>
-                                
-                                
-                                    
-                                <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
-                            </form>
+                                        ?>
+                                            <tr>
+                                                <td><?=$no;?></td>
+                                                <td><?=$lom->kontak_nama ;?></td>
+                                                <td><?=$lom->kontak_email ;?></td>
+                                                <td><?=$lom->kontak_hp;?></td>
+                                                <td><?=substr($lom->kontak_pesan, 0, 75);?>...</td>
+                                                <td><?=$lom->kontak_date;?></td>
+                                                <td>
+
+                                                    <?php
+                                                        if($lom->kontak_status == "Belum Dibaca")
+                                                            echo "<strong>".$lom->kontak_status."</strong>";
+                                                        else
+                                                            echo $lom->kontak_status;
+                                                        
+                                                    ?>
+                                                </td>
+                                                <td><a href="<?=base_url();?>index.php/admin/kontak/detail/<?=$lom->kontak_id?>"><button type="button" class="btn btn-info">Detail</button></td>
+                                            </tr>
+                                            
+
+                                        <?php $no++; endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Advanced Validation -->
+            <!-- #END# Basic Examples -->
         </div>
     </section>

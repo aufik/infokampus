@@ -29,41 +29,72 @@ class Lomba extends CI_Controller {
     }
     public function tambah()
 	{   
-        
+        $data['kategori'] = $this->dbObject->get_general('lomba_kategori');
         $this->load->view('admin/templates/header');
 		$this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/footer');
-        $this->load->view('admin/lomba/tambah');
-        // $this->load->view('admin/lomba/test');
+        $this->load->view('admin/lomba/tambah', $data);
         $this->load->view('admin/templates/subfooter');
         
 
     }
     public function tambah_proses(){
-        $lomba_judul=trim($this->input->POST('lomba_judul')); 
-        $data = array(
-            'lomba_judul' => $lomba_judul,
-            'lomba_kat_id' => '1'
-        );
-        if($this->dbObject->create_general($this->lomba, $data)===TRUE)		// using direct parameter
-        {
-            ?>
-            <script> 
-                alert(" Data berhasil disimpan. ");
-                location.replace("<?=base_url()?>index.php/admin/lomba"); 
-            </script>
-            <?php
-            //redirect('master/jabatan','refresh');
-        }
-        else { 
-            ?>
-            <script> 
-                alert(" Data gagal disimpan. ");
-                location.replace("<?=base_url()?>index.php/admin/lomba/tambah"); 
-            </script>
-            <?php
-            //redirect('master/jabatan_insert','refresh');
-        }
+        $config['upload_path']          = './assets/img/poster';
+		$config['allowed_types']        = 'gif|jpg|png';
+		$config['max_size']             = (99999 * 9999);
+		$config['max_width']            = (99999 * 9999);
+		$config['max_height']           = (99999 * 9999);
+ 
+		$this->load->library('upload', $config);
+ 
+		if ( ! $this->upload->do_upload('poster')){
+			}
+
+			$lomba_judul = trim($this->input->post('lomba_judul'));
+			$lomba_isi=trim($this->input->post('lomba_isi'));
+			$lomba_link=trim($this->input->post('lomba_link'));
+			$lomba_deadline=trim($this->input->post('lomba_deadline'));
+			$lomba_tiket=trim($this->input->post('lomba_tiket'));
+            $lomba_alamat=trim($this->input->post('lomba_alamat')); 
+            $lomba_kat_id=trim($this->input->post('lomba_kat_id')); 
+            $lomba_created_time=date("Y-m-d h:i:sa");
+            $lomba_update_time=date("Y-m-d h:i:sa");
+            $lomba_created_by_id = $this->session->user_id;
+            $lomba_update_by_id = $this->session->user_id;
+			$data = array(
+				'lomba_judul' => $lomba_judul, 
+				'lomba_isi' => $lomba_isi,
+				'lomba_link' => $lomba_link, 
+				'lomba_deadline' => $lomba_deadline,
+				'lomba_tiket' => $lomba_tiket, 
+				'lomba_alamat' => $lomba_alamat, 
+                'lomba_gambar' => $this->upload->data('file_name'),
+                'lomba_created_time' => $lomba_created_time, 
+                'lomba_update_time' => $lomba_update_time, 
+                'lomba_created_by_id' => $lomba_created_by_id, 
+                'lomba_update_by_id' => $lomba_update_by_id,
+                'lomba_kat_id'=>$lomba_kat_id
+			);
+			if($this->dbObject->create_general( $this->lomba, $data)===TRUE)		// using direct parameter
+			{
+				
+				?>
+				<script> 
+					alert(" Data berhasil disimpan. ");
+					location.replace("<?=base_url()?>index.php/admin/lomba/"); 
+				</script>
+				<?php
+				//redirect('kepegawaian/jabatan','refresh');
+			}
+			else {
+				?>
+				<script> 
+					alert(" Data gagal disimpan. ");
+					location.replace("<?=base_url()?>index.php/admin/lomba/tambah"); 
+				</script>
+				<?php
+				//redirect('kepegawaian/jabatan_insert','refresh');
+			}
     }
 
     public function permintaan_lomba(){
@@ -100,6 +131,15 @@ class Lomba extends CI_Controller {
             <?php
             //redirect('master/jabatan_insert','refresh');
         }
+    }
+    public function edit_lomba($param=""){
+        $data['lomba'] = $this->dbObject->get_general_4($param);		
+        $this->load->view('admin/templates/header');
+		$this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/templates/footer');
+        $this->load->view('admin/lomba/edit', $data);
+        $this->load->view('admin/templates/subfooter');
+
     }
 
 

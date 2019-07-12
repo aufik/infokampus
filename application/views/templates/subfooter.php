@@ -9,7 +9,7 @@
 
     <!-- Slimscroll Plugin Js -->
     <script src="<?=base_url()?>assets/backoffice/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
+    
     <!-- Waves Effect Plugin Js -->
     <script src="<?=base_url()?>assets/backoffice/plugins/node-waves/waves.js"></script>
 
@@ -37,6 +37,7 @@
     <script src="<?=base_url()?>assets/backoffice/js/admin.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/ui/modals.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/index.js"></script>
+    <script src="<?=base_url()?>assets/backoffice/js/pages/forms/advanced-form-elements.js"></script>
     
 
     <!-- Demo Js -->

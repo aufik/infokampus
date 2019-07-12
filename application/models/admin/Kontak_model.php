@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Model_lomba extends CI_Model
+class Kontak_model extends CI_Model
 {
 	function __construct()
     {
@@ -34,18 +34,6 @@ class Model_lomba extends CI_Model
 	{
 		$this->db->where($id, $val);
 		return $this->db->delete($table);
-	}
-
-	//tambahan
-	function get_general_2($tab, $tab2, $id, $id2){
-		
-		return $this->db->query("select * from lomba, lomba_kategori where lomba.lomba_kat_id = lomba_kategori.lomba_kategori_id and status !='menunggu'")->result();
-	}
-	function get_general_3($tab, $tab2, $id, $id2){
-		return $this->db->query("select * from lomba, lomba_kategori where lomba.lomba_kat_id = lomba_kategori.lomba_kategori_id and status ='menunggu'")->result();
-	}
-	function get_general_4($id){
-		return $this->db->query("select * from lomba, lomba_kategori where lomba.lomba_kat_id = lomba_kategori.lomba_kategori_id and lomba.lomba_id = $id")->result();
 	}
 }
 ?>
