@@ -190,6 +190,7 @@
                                     </div>
                                     <div class="help-info">Min. 1, Max. 255 characters</div>
                                 </div> -->
+                                
                             <form id="form_advanced_validation frmFileUpload" method="POST" action="<?=base_url();?>index.php/admin/lomba/tambah_proses"  enctype="multipart/form-data">
                                 
                             <div class="form-group form-float">
@@ -245,7 +246,14 @@
                                     </div>
                                 </div>
                                 
-                                
+                                <select id="provinsi">
+                                </select>
+                                <select id="kabupaten">
+                                </select>
+                                <select id="kecamatan">
+                                </select>
+                                <select id="kelurahan">
+                                </select>
                                     
                                 <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
                             </form>
@@ -254,5 +262,49 @@
                 </div>
             </div>
             <!-- #END# Advanced Validation -->
+            <div id="images"></div>
         </div>
     </section>
+    
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.getJSON demo</title>
+  <style>
+  img {
+    height: 100px;
+    float: left;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div id="images"></div>
+ 
+<script>
+(function() {
+  var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  $.getJSON( flickerAPI, {
+    tags: "mount rainier",
+    tagmode: "any",
+    format: "json"
+  })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+        if ( i === 3 ) {
+          return false;
+        }
+      });
+    });
+})();
+</script>
+ 
+</body>
+</html>
+
+
+    

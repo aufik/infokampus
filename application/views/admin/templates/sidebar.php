@@ -173,40 +173,57 @@
             </div>
             <!-- #User Info -->
             <!-- Menu -->
+            <!-- class="active" -->
             <div class="menu">
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active">
-                        <a href="index.html">
-                            <i class="material-icons">home</i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">swap_calls</i>
-                            <span>Lomba</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="<?=base_url();?>index.php/admin/lomba">Lihat Lomba</a>
-                            </li>
-                            <li>
-                                <a href="<?=base_url();?>index.php/admin/lomba/permintaan_lomba">Permintaan Lomba</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                    <a href="<?=base_url();?>index.php/admin/team">    
-                            <i class="material-icons">home</i>
-                            <span>Team</span>
-                        </a>
-                    </li>
-                    <a href="<?=base_url();?>index.php/admin/kontak">    
-                            <i class="material-icons">home</i>
-                            <span>Kontak</span>
-                        </a>
-                    </li>
+                    <?php if($this->session->user_level == "admin"){ ?>
+                        <li>
+                            <a href="index.html">
+                                <i class="material-icons">home</i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">swap_calls</i>
+                                <span>Lomba</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="<?=base_url();?>index.php/admin/lomba">Lihat Lomba</a>
+                                </li>
+                                <li>
+                                    <a href="<?=base_url();?>index.php/admin/lomba/permintaan_lomba">Permintaan Lomba</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        <a href="<?=base_url();?>index.php/admin/team">    
+                                <i class="material-icons">home</i>
+                                <span>Team</span>
+                            </a>
+                        </li>
+                        <a href="<?=base_url();?>index.php/admin/kontak">    
+                                <i class="material-icons">home</i>
+                                <span>Kontak</span>
+                            </a>
+                        </li>
+                    <?php }else{ ?>
+                        <li>
+                            <a href="index.html">
+                                <i class="material-icons">home</i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?=base_url();?>index.php/admin/lomba">Lihat Lomba</a>
+                        </li>
+                        <li>
+                            <a href="<?=base_url();?>index.php/admin/lomba/permintaan_lomba">Tambah Lomba</a>
+                        </li>
+                    <?php } ?>
                     
                 </ul>
             </div>

@@ -109,7 +109,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Name" type="text">
+                    <input class="form-control" placeholder="Name" type="text" >
                   </div>
                 </div>
                 <div class="form-group">
@@ -120,16 +120,21 @@
                     <input class="form-control" placeholder="Email" type="email">
                   </div>
                 </div>
+                
                 <div class="form-group">
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Password" type="password">
+                    <input  id="password-field"  class="form-control" placeholder="Password" type="password"   onkeyup="passwordStrength(this.value)">
+                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" style="float: right;margin-left:10px;margin-right: 10px;margin-top: 15px;position: relative;z-index: 2;"></span>
                   </div>
                 </div>
-                <div class="text-muted font-italic"><small>password strength: <span class="text-success font-weight-700">strong</span></small></div>
-                <div class="row my-4">
+
+
+
+                <div class="text-muted font-italic"><small>password strength: <span  id="status" class="text-success font-weight-700">Tidak Aman</span></small></div>
+                <!-- <div class="row my-4">
                   <div class="col-12">
                     <div class="custom-control custom-control-alternative custom-checkbox">
                       <input class="custom-control-input" id="customCheckRegister" type="checkbox">
@@ -138,7 +143,7 @@
                       </label>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <div class="text-center">
                   <button type="button" class="btn btn-primary mt-4">Create account</button>
                 </div>
@@ -170,11 +175,59 @@
   <script src="<?=base_url()?>assets/backoffice/js/argon-dashboard.min.js?v=1.1.0"></script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script>
-    window.TrackJS &&
-      TrackJS.install({
-        token: "ee6fab19c5a04ac1a32a645abde4613a",
-        application: "argon-dashboard-free"
-      });
+    // fungsi untuk mengecek kekuatan password
+function passwordStrength(p){
+ var status = document.getElementById('status');
+
+ var regex = new Array();
+ regex.push("[A-Z]");
+ regex.push("[a-z]");
+ regex.push("[0-9]");
+ regex.push("[!@#$%^&*]");
+
+ var passed = 0;
+  for(var x = 0; x < regex.length;x++){
+  if(new RegExp(regex[x]).test(p)){
+   console.log(passed++);
+  }
+ }
+
+ var strength = null;
+ var color = null;
+
+ switch(passed){
+  case 0:strength = "Tidak Aman";
+   color = "#FF3232";
+  break;
+  case 1:strength = "Tidak Aman";
+   color = "#FF3232";
+  break;
+  case 2:
+   strength = "Tidak Aman";
+   color = "#FF3232";
+  break;
+  case 3:
+   strength = "Cukup Aman";
+   color = "#E1D441";
+  break;
+  case 4:
+   strength = "Sangat Aman";
+   color = "#27D644";
+ }
+
+ status.innerHTML = strength;
+ status.style.color = color;
+}
+$(".toggle-password").click(function() {
+
+$(this).toggleClass("fa-eye fa-eye-slash");
+var input = $($(this).attr("toggle"));
+if (input.attr("type") == "password") {
+  input.attr("type", "text");
+} else {
+  input.attr("type", "password");
+}
+});
   </script>
 </body>
 
