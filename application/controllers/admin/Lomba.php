@@ -18,7 +18,7 @@ class Lomba extends CI_Controller {
 
 	public function index()
 	{   
-        $data['lomba'] = $this->dbObject->get_general_2($this->lomba, $this->lomba_kate, $this->id_lomba, $this->id_lomba_kate);		
+        $data['lomba'] = $this->dbObject->get_general_tampil_lomba($this->lomba, $this->lomba_kate, $this->id_lomba, $this->id_lomba_kate);		
         
         $this->load->view('admin/templates/header');
 		$this->load->view('admin/templates/sidebar');
@@ -98,7 +98,7 @@ class Lomba extends CI_Controller {
     }
 
     public function permintaan_lomba(){
-        $data['lomba'] = $this->dbObject->get_general_3($this->lomba, $this->lomba_kate, $this->id_lomba, $this->id_lomba_kate);		
+        $data['lomba'] = $this->dbObject->get_general_permintaan_lomba($this->lomba, $this->lomba_kate, $this->id_lomba, $this->id_lomba_kate);		
         
         $this->load->view('admin/templates/header');
 		$this->load->view('admin/templates/sidebar');
@@ -108,15 +108,16 @@ class Lomba extends CI_Controller {
     }
     public function penentuan($param="", $param2=""){
         
+        $lomba_keterangan=trim($this->input->post('keterangan'));
         $data = array(
-            'status' => $param2
+            'status' => $param2,
+            'lomba_keterangan'=>$lomba_keterangan
         );
-
         if($this->dbObject->update_general($this->lomba, 'lomba_id', $param, $data )===TRUE)		// using direct parameter
         {
             ?>
             <script> 
-                alert(" Diterima. ");
+                alert("<?=$param2?>");
                 location.replace("<?=base_url()?>index.php/admin/lomba/"); 
             </script>
             <?php

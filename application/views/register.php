@@ -14,6 +14,11 @@
   <link href="<?=base_url()?>assets/backoffice/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="<?=base_url()?>assets/backoffice/css/argon-dashboard.css?v=1.1.0" rel="stylesheet" />
+
+  
+  <script src="<?php echo base_url(); ?>assets/backoffice/js/jquery-3.4.1.min.js"></script>
+	<!-- <script src="<?php echo base_url(); ?>assets/backoffice/js/jquery-migrate-1.4.1.min.js"></script> -->
+	<!-- <script src="<?php echo base_url(); ?>assets/backoffice/js/jquery-ui-1.10.3.custom.min.js"></script> -->
 </head>
 
 <body class="bg-default">
@@ -103,13 +108,16 @@
               <div class="text-center text-muted mb-4">
                 <small>Or sign up with credentials</small>
               </div>
-              <form role="form">
+              <form role="form" method="POST" action="<?=base_url();?>index.php/auth/registrasi_do" id='signupform'>
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Name" type="text" >
+                    <input class="form-control" placeholder="Username" type="text" name="username" id="username"  data-validation="length alphanumeric" 
+		 data-validation-length="3-12" 
+		 data-validation-error-msg="User name has to be an alphanumeric value (3-12 chars)">
+                    <label id="message_username"></label>
                   </div>
                 </div>
                 <div class="form-group">
@@ -117,7 +125,9 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Email" type="email">
+                    <input id="email" class="form-control" placeholder="Email" type="email" name="email"  data-validation="email"  data-validation-error-msg="Masukan Email Dengan Benar" >
+                    <label id="message"></label>
+                    <!-- <span id="loading"><img src="<?php echo base_url(); ?>assets/img/animat-rocket-color.gif" alt="Ajax Indicator" width="50px" height="auto"  /></span> </div> -->
                   </div>
                 </div>
                 
@@ -126,7 +136,8 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input  id="password-field"  class="form-control" placeholder="Password" type="password"   onkeyup="passwordStrength(this.value)">
+                    <input  id="password-field"  class="form-control" placeholder="Password" type="password"   onkeyup="passwordStrength(this.value)" name="password"  data-validation="strength" 
+		 data-validation-strength="3" data-validation-error-msg="Password Menggunakan Huruf kapital, Huruf kecil, Angka Dan Symbol">
                     <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" style="float: right;margin-left:10px;margin-right: 10px;margin-top: 15px;position: relative;z-index: 2;"></span>
                   </div>
                 </div>
@@ -145,9 +156,12 @@
                   </div>
                 </div> -->
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary mt-4">Create account</button>
+                    <input type="submit" class="btn btn-primary mt-4" value="Create account">
                 </div>
               </form>
+    
+ 
+    
             </div>
           </div>
         </div>
@@ -173,7 +187,8 @@
   <!--   Optional JS   -->
   <!--   Argon JS   -->
   <script src="<?=base_url()?>assets/backoffice/js/argon-dashboard.min.js?v=1.1.0"></script>
-  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+
+
   <script>
     // fungsi untuk mengecek kekuatan password
 function passwordStrength(p){
@@ -218,6 +233,7 @@ function passwordStrength(p){
  status.innerHTML = strength;
  status.style.color = color;
 }
+
 $(".toggle-password").click(function() {
 
 $(this).toggleClass("fa-eye fa-eye-slash");
@@ -228,7 +244,30 @@ if (input.attr("type") == "password") {
   input.attr("type", "password");
 }
 });
+
+
+
+  
   </script>
+
+  
+    <!-- validator -->
+    <script src="<?=base_url()?>assets/backoffice/plugins/jQuery-Validator/form-validator/jquery.form-validator.min.js"></script>
+  <script>
+    $.validate({
+    modules : 'location, date, security, file',
+    onModulesLoaded : function() {
+      $('#country').suggestCountry();
+    }
+  });
+
+  // Restrict presentation length
+  $('#presentation').restrictLength( $('#pres-max-length') );
+  
+    $.validate({
+        modules : 'date, security'
+    });
+</script>
 </body>
 
 </html>

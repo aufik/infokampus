@@ -92,6 +92,15 @@
     
     
     <!-- Custom Js -->
+    <script>
+$(function () {
+    $('.js-modal-buttons .btn').on('click', function () {
+        var color = $(this).data('color');
+        $('#mdModal .modal-content').removeAttr('class').addClass('modal-content modal-col-' + color);
+        $('#mdModal').modal('show');
+    });
+});
+        </script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/tables/jquery-datatable.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/admin.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/forms/form-validation.js"></script>

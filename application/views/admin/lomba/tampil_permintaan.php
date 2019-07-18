@@ -148,8 +148,8 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    JQUERY DATATABLES
-                    <small>Taken from <a href="https://datatables.net/" target="_blank">datatables.net</a></small>
+                    Permintaan Lomba
+                    <small>Lomba / Permintaan Lomba</small>
                 </h2>
             </div>
             
@@ -159,7 +159,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                BASIC EXAMPLE
+                            Permintaan Lomba
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <a href="<?=base_url();?>index.php/admin/lomba/tambah"><button type="button" class="btn btn-primary">Tambah Lomba Baru</button></a>
@@ -222,6 +222,34 @@
                                                     <div class="button-demo js-modal-buttons">
                                                         <button type="button" data-color="red" class="btn bg-red waves-effect">Tolak</button>
                                                     </div>
+
+                                                    <!-- #modal -->
+                                                    <div class="modal fade" id="mdModal" tabindex="-1" role="dialog">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h4 class="modal-title" id="defaultModalLabel">Alasan Penolakan Lomba</h4>
+                                                                        </div>
+                                                                        
+                                                                        <form id="form_advanced_validation frmFileUpload" method="POST" action="<?=base_url();?>index.php/admin/lomba/penentuan/<?=$lom->lomba_id?>/Ditolak"  enctype="multipart/form-data">
+                                                                        <div class="modal-body">
+                                                                        <div class="form-group form-float">
+                                                                                    <div class="form-line">
+                                                                                        <textarea id="ckeditor" Value="keterangan" name="keterangan">
+                                                                                        </textarea>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button class="btn btn-link waves-effect"  type="submit">SAVE CHANGES</button>
+                                                                            <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                                                                        </div>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                
                                                 </td>
                                             </tr>
                                             
@@ -229,31 +257,40 @@
                                         <?php $no++; endforeach; ?>
                                     </tbody>
                                 </table>
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Basic Examples -->
-            <div class="modal fade" id="mdModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="defaultModalLabel">Modal title</h4>
-                        </div>
-                        <div class="modal-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales orci ante, sed ornare eros vestibulum ut. Ut accumsan
-                            vitae eros sit amet tristique. Nullam scelerisque nunc enim, non dignissim nibh faucibus ullamcorper.
-                            Fusce pulvinar libero vel ligula iaculis ullamcorper. Integer dapibus, mi ac tempor varius, purus
-                            nibh mattis erat, vitae porta nunc nisi non tellus. Vivamus mollis ante non massa egestas fringilla.
-                            Vestibulum egestas consectetur nunc at ultricies. Morbi quis consectetur nunc.
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-link waves-effect">SAVE CHANGES</button>
-                            <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </section>
+
+
+
+
+
+
+    

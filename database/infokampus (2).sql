@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2019 at 09:34 AM
+-- Generation Time: Jul 18, 2019 at 04:01 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -29,12 +29,24 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `biodata` (
-  `biodata_id` int(11) NOT NULL,
+  `biodata_id` varchar(11) NOT NULL,
   `biodata_nama` varchar(255) NOT NULL,
   `biodata_email` varchar(255) NOT NULL,
   `biodata_hp` varchar(13) NOT NULL,
   `biodata_foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `biodata`
+--
+
+INSERT INTO `biodata` (`biodata_id`, `biodata_nama`, `biodata_email`, `biodata_hp`, `biodata_foto`) VALUES
+('BIO0000001', '', '1@mail.com', '', ''),
+('BIO0000002', '', '1@mail.com', '', ''),
+('BIO0000003', '', 'kamil@mail.com', '', ''),
+('BIO0000004', '', 'kamil1@gmail.com', '', ''),
+('BIO0000005', '', 'test@mail.com', '', ''),
+('BIO0000006', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -80,16 +92,20 @@ CREATE TABLE `lomba` (
   `lomba_kat_id` int(11) NOT NULL,
   `lomba_created_by_id` int(11) NOT NULL,
   `lomba_update_by_id` int(11) NOT NULL,
-  `status` enum('Menunggu','Diterima','Ditolak') NOT NULL
+  `status` enum('Menunggu','Diterima','Ditolak') NOT NULL,
+  `lomba_keterangan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `lomba`
 --
 
-INSERT INTO `lomba` (`lomba_id`, `lomba_judul`, `lomba_gambar`, `lomba_isi`, `lomba_link`, `lomba_deadline`, `lomba_tiket`, `lomba_alamat`, `lomba_created_time`, `lomba_update_time`, `lomba_kat_id`, `lomba_created_by_id`, `lomba_update_by_id`, `status`) VALUES
-(1, 'ini adalah dunia yang telah kita dia aku kamu situ sana dan yang ada di sini pohon 1 dot png satu satu', 'pohon1.png', 'ini adalah dunia yang telah kita dia aku kamu situ sana dan yang ada di sini pohon 1 dot png satu satu', '1', '2019-07-09 00:00:18', 'Gratis', 'jl. in aja', '2019-07-09 21:04:25', '2019-07-12 20:29:11', 1, 1, 1, 'Diterima'),
-(14, '', '', '', '', '0000-00-00 00:00:00', '', '', '2019-07-12 06:03:09', '2019-07-12 06:03:09', 0, 1, 1, 'Menunggu');
+INSERT INTO `lomba` (`lomba_id`, `lomba_judul`, `lomba_gambar`, `lomba_isi`, `lomba_link`, `lomba_deadline`, `lomba_tiket`, `lomba_alamat`, `lomba_created_time`, `lomba_update_time`, `lomba_kat_id`, `lomba_created_by_id`, `lomba_update_by_id`, `status`, `lomba_keterangan`) VALUES
+(1, 'ini adalah dunia yang telah kita dia aku kamu situ sana dan yang ada di sini pohon 1 dot png satu satu', 'pohon1.png', 'ini adalah dunia yang telah kita dia aku kamu situ sana dan yang ada di sini pohon 1 dot png satu satu', '1', '2019-07-09 00:00:18', 'Gratis', 'jl. in aja', '2019-07-09 21:04:25', '2019-07-12 20:29:11', 1, 1, 1, 'Diterima', ''),
+(14, '', '', '', '', '0000-00-00 00:00:00', '', '', '2019-07-12 06:03:09', '2019-07-18 15:51:21', 1, 1, 1, 'Ditolak', '<p>maaf Lomba Tidak Jelas, Harap diperbaiki terlebih dahulu</p>'),
+(19, '14', 'oil-bottle7.png', '<p>14</p>', '4', '2020-07-18 00:00:00', '', '4', '2019-07-17 02:30:05', '2019-07-18 14:53:08', 1, 6, 6, 'Diterima', ''),
+(24, '1', 'index.jpg', '<p>1111</p>', '1', '0000-00-00 00:00:00', '', '1', '2019-07-17 03:20:08', '2019-07-18 15:45:46', 1, 6, 6, 'Ditolak', ''),
+(25, '2', 'crude_palm_oil_23.jpg', '<p>2</p>', '2', '2020-02-02 14:02:00', '', '2', '2019-07-17 03:22:21', '2019-07-18 15:49:48', 1, 6, 6, 'Ditolak', '<p>maaf Lomba Tidak Jelas, Harap diperbaiki terlebih dahulu</p>');
 
 -- --------------------------------------------------------
 
@@ -107,7 +123,8 @@ CREATE TABLE `lomba_kategori` (
 --
 
 INSERT INTO `lomba_kategori` (`lomba_kategori_id`, `lomba_kategori_nama`) VALUES
-(1, 'Nasional');
+(1, 'Nasional'),
+(2, 'Internasional');
 
 -- --------------------------------------------------------
 
@@ -149,8 +166,8 @@ CREATE TABLE `user` (
   `user_name` varchar(255) NOT NULL,
   `user_pass` varchar(255) NOT NULL,
   `user_pass_ret` varchar(255) NOT NULL,
-  `user_level` enum('admin','member') NOT NULL,
-  `biodata_id` int(11) NOT NULL
+  `user_level` enum('member','admin') NOT NULL,
+  `biodata_id` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -158,7 +175,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_name`, `user_pass`, `user_pass_ret`, `user_level`, `biodata_id`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', 0);
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', '0'),
+(2, '1', 'c4ca4238a0b923820dcc509a6f75849b', '1', 'member', 'BIO0000001'),
+(4, 'kamil', '9c88bffe244ae9a2e3fda52c5a88799f', 'kamil123!@#', 'member', 'BIO0000003'),
+(5, 'kamil1', '832b094432677a13aa800cf0c685a032', 'kamil1', 'member', 'BIO0000004'),
+(6, 'test', '098f6bcd4621d373cade4e832627b4f6', 'test', 'member', 'BIO0000005');
 
 --
 -- Indexes for dumped tables
@@ -206,12 +227,6 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `biodata`
---
-ALTER TABLE `biodata`
-  MODIFY `biodata_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `kontak`
 --
 ALTER TABLE `kontak`
@@ -221,13 +236,13 @@ ALTER TABLE `kontak`
 -- AUTO_INCREMENT for table `lomba`
 --
 ALTER TABLE `lomba`
-  MODIFY `lomba_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `lomba_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `lomba_kategori`
 --
 ALTER TABLE `lomba_kategori`
-  MODIFY `lomba_kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `lomba_kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `team`
@@ -239,7 +254,7 @@ ALTER TABLE `team`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -148,8 +148,8 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    JQUERY DATATABLES
-                    <small>Taken from <a href="https://datatables.net/" target="_blank">datatables.net</a></small>
+                    Data Perlombaan
+                    <small>Lomba / List Perlombaan</small>
                 </h2>
             </div>
             
@@ -159,7 +159,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                BASIC EXAMPLE
+                                Perlombaan
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <a href="<?=base_url();?>index.php/admin/lomba/tambah"><button type="button" class="btn btn-primary">Tambah Lomba Baru</button></a>
@@ -182,9 +182,10 @@
                                     <thead>
                                         <tr>
                                             <th>NO</th>
+                                            <th>Username</th>
                                             <th>Judul</th>
                                             <th>Gambar</th>
-                                            <th>Isi</th>
+                                            <!-- <th>Isi</th> -->
                                             <th>Link</th>
                                             <th>Deadline</th>
                                             <th>Kategori</th>
@@ -197,9 +198,10 @@
                                     <tfoot>
                                         <tr>
                                             <th>NO</th>
+                                            <th>Username</th>
                                             <th>Judul</th>
                                             <th>Gambar</th>
-                                            <th>Isi</th>
+                                            <!-- <th>Isi</th> -->
                                             <th>Link</th>
                                             <th>Deadline</th>
                                             <th>Kategori</th>
@@ -217,9 +219,10 @@
                                         ?>
                                             <tr>
                                                 <td><?=$no;?></td>
+                                                <td><?=$lom->user_name ;?></td>
                                                 <td><?=substr($lom->lomba_judul, 0, 35);?>...</td>
                                                 <td><img src="<?=base_url();?>assets/img/poster/<?=$lom->lomba_gambar;?>" width="50" height="auto"></td>
-                                                <td><?=substr($lom->lomba_isi, 0, 75);?>...</td>
+                                                <!-- <td><?=substr($lom->lomba_isi, 0, 75);?>...</td> -->
                                                 <td><?=$lom->lomba_link ;?></td>
                                                 <td><?=$lom->lomba_deadline;?></td>
                                                 <td><?=$lom->lomba_kategori_nama;?></td>
@@ -229,12 +232,22 @@
                                                 
                                                         if($lom->status == "Diterima"){
                                                             
-                                                            echo "<div class='text-success'>".$lom->status."</div>";
+                                                            echo "<div class='text-success'><strong>".$lom->status."</strong></div>";
                                                         }
                                                         else if($lom->status == "Ditolak")
-                                                            echo "<div class='text-danger'>".$lom->status."</div>";
-                                                ?></td>
-                                                <td><a href="<?=base_url();?>index.php/admin/lomba/edit_lomba/<?=$lom->lomba_id?>"><button type="button" class="btn btn-info">Edit</button></td>
+                                                            echo "<div class='text-danger'><strong>".$lom->status."</strong></div>";
+                                                        else
+                                                            echo "<div class='text-info'><strong>".$lom->status."</strong></div>";
+                                                ?>
+                                                
+                                                </td>
+                                                
+                                                <td>
+                                                    <?php if ($lom->lomba_deadline >= date("YYYY-m-d")){ ?>
+                                                    <a href="<?=base_url();?>index.php/admin/lomba/edit_lomba/<?=$lom->lomba_id?>"><button type="button" class="btn btn-warning">Edit</button>
+                                                    <?php } ?>
+                                                    <button type="button" class="btn btn-info">Lihat</button>
+                                                </td>
                                             </tr>
                                             
 

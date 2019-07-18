@@ -37,15 +37,14 @@ class Model_lomba extends CI_Model
 	}
 
 	//tambahan
-	function get_general_2($tab, $tab2, $id, $id2){
-		
-		return $this->db->query("select * from lomba, lomba_kategori where lomba.lomba_kat_id = lomba_kategori.lomba_kategori_id and status !='menunggu'")->result();
+	function get_general_tampil_lomba($tab, $tab2, $id, $id2){		
+		return $this->db->query("select * from lomba, lomba_kategori, user where lomba.lomba_kat_id = lomba_kategori.lomba_kategori_id and lomba.status !='menunggu' and lomba.lomba_created_by_id = user.user_id")->result();
 	}
-	function get_general_3($tab, $tab2, $id, $id2){
-		return $this->db->query("select * from lomba, lomba_kategori where lomba.lomba_kat_id = lomba_kategori.lomba_kategori_id and status ='menunggu'")->result();
+	function get_general_permintaan_lomba($tab, $tab2, $id, $id2){
+		return $this->db->query("select * from lomba, lomba_kategori where lomba.lomba_kat_id = lomba_kategori.lomba_kategori_id and lomba.status ='menunggu' ")->result();
 	}
-	function get_general_4($id){
-		return $this->db->query("select * from lomba, lomba_kategori where lomba.lomba_kat_id = lomba_kategori.lomba_kategori_id and lomba.lomba_id = $id")->result();
+	function get_general_edit($id){
+		return $this->db->query("select * from lomba, lomba_kategori where lomba.lomba_kat_id = lomba_kategori.lomba_kategori_id and lomba.lomba.lomba_id = $id")->result();
 	}
 }
 ?>

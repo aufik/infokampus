@@ -21,8 +21,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
       <div class="container px-4">
-        <a class="navbar-brand" href="../index.html">
-          <img src="<?=base_url()?>assets/backoffice/img/brand/white.png" />
+        <a class="navbar-brand" href="<?=base_url();?>">
+          <strong>Info Kampus</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -69,7 +69,7 @@
           <div class="row justify-content-center">
             <div class="col-lg-5 col-md-6">
               <h1 class="text-white">Welcome!</h1>
-              <p class="text-lead text-light">Use these awesome forms to login or create new account in your project for free.</p>
+              <!-- <p class="text-lead text-light">Use these awesome forms to login or create new account in your project for free.</p> -->
             </div>
           </div>
         </div>
@@ -129,6 +129,7 @@
                   <button type="submit" class="btn btn-primary my-4">Sign in</button>
                 </div>
               </form>
+              
             </div>
           </div>
           <div class="row mt-3">
@@ -161,13 +162,7 @@
   <!--   Argon JS   -->
   <script src="<?=base_url()?>assets/backoffice/js/argon-dashboard.min.js?v=1.1.0"></script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-  <script>
-    window.TrackJS &&
-      TrackJS.install({
-        token: "ee6fab19c5a04ac1a32a645abde4613a",
-        application: "argon-dashboard-free"
-      });
-  </script>
+  
 </body>
 
 </html>

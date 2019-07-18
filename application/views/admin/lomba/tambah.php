@@ -149,7 +149,7 @@
             <div class="block-header">
                 <h2>
                     Lomba
-                    <small>Lomba / Permintaan Lomba / Tambah Lomba</small>
+                    <small>Lomba /  Tambah Lomba</small>
                 </h2>
             </div>
 
@@ -192,21 +192,52 @@
                                 </div> -->
                                 
                             <form id="form_advanced_validation frmFileUpload" method="POST" action="<?=base_url();?>index.php/admin/lomba/tambah_proses"  enctype="multipart/form-data">
-                                
+                                <script>
+                                function tampilkanPreview(gambar,idpreview){
+                    //                membuat objek gambar
+                                    var gb = gambar.files;
+                    //                loop untuk merender gambar
+                                    for (var i = 0; i < gb.length; i++){
+                    //                    bikin variabel
+                                        var gbPreview = gb[i];
+                                        var imageType = /image.*/;
+                                        var preview=document.getElementById(idpreview);
+                                        var reader = new FileReader();
+                                        if (gbPreview.type.match(imageType)) {
+                    //                        jika tipe data sesuai
+                                            preview.file = gbPreview;
+                                            reader.onload = (function(element) {
+                                                return function(e) {
+                                                    element.src = e.target.result;
+                                                };
+                                            })(preview);
+                        //                    membaca data URL gambar
+                                            reader.readAsDataURL(gbPreview);
+                                        }else{
+                    //                        jika tipe data tidak sesuai
+                                            alert("Type file tidak sesuai. Khusus image.");
+                                        }
+                                    }
+                                }
+                            </script>
+                            <img id="preview" src="" alt="" width="170px" style="border:2px solid black;display: block;margin-left: auto;margin-right: auto;"/>
                             <div class="form-group form-float">
+                            <label class="form-label">Poster</label>
                                     <div class="form-line">
-                                        <input type="file" name="poster" class="form-control" value="upload">
+                                        <input type="file" name="poster" class="form-control" value="upload"   onchange="tampilkanPreview(this,'preview')">
                                     </div>
                                     <div class="help-info">Min. 1, Max. 255 characters</div>
                                 </div>
                                 <div class="form-group form-float">
+                                <label class="form-label">Judul</label>
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="lomba_judul" maxlength="255" minlength="1" required>
-                                        <label class="form-label">Judul</label>
+                                        
                                     </div>
                                     <div class="help-info">Min. 1, Max. 255 characters</div>
                                 </div>
                                 <div class="form-group form-float">
+                                <label class="form-label">Kategori</label>
                                     <div class="form-line">
                                         <select class="form-control show-tick" data-live-search="true" name="lomba_kat_id">
                                         <?php foreach($kategori as $kat):?>
@@ -218,43 +249,42 @@
                                     <div class="help-info">Min. 1, Max. 255 characters</div>
                                 </div>
                                 <div class="form-group form-float">
+                                    <label class="form-label">LINK</label>
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="lomba_link" maxlength="255" minlength="1" >
-                                        <label class="form-label">LINK</label>
                                     </div>
                                     <div class="help-info">Min. 1, Max. 255 characters</div>
                                 </div>
                                 <div class="form-group form-float">
+                                <label class="form-label">Alamat</label>
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="lomba_alamat" maxlength="255" minlength="1" required>
-                                        <label class="form-label">Alamat</label>
+                                        
                                     </div>
                                     <div class="help-info">Min. 1, Max. 255 characters</div>
                                 </div>
                                 <div class="form-group form-float">
+                                <label class="form-label">Tanggal</label>
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="lomba_deadline" required>
-                                        <label class="form-label">Deadline</label>
+                                        <input type="date" class="form-control" name="lomba_deadline_tanggal" required>
                                     </div>
-                                    <div class="help-info">YYYY-MM-DD format</div>
+                                    <div class="help-info">Bulan/Tanggal/tahun format</div>
                                 </div>
                                 <div class="form-group form-float">
+                                <label class="form-label">Jam</label>
+                                    <div class="form-line">
+                                        <input type="time" class="form-control" name="lomba_deadline_time" required>
+                                    </div>
+                                    <div class="help-info">Jam/Menit (AM/PM)</div>
+                                </div>
+                                <div class="form-group form-float">
+                                <label class="form-label">Deskripsi / Isi</label>
                                     <div class="form-line">
                                         <textarea id="ckeditor" Value="Isi" name="lomba_isi">
                                         </textarea>
 
                                     </div>
                                 </div>
-                                
-                                <select id="provinsi">
-                                </select>
-                                <select id="kabupaten">
-                                </select>
-                                <select id="kecamatan">
-                                </select>
-                                <select id="kelurahan">
-                                </select>
-                                    
                                 <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
                             </form>
                         </div>
@@ -265,46 +295,4 @@
             <div id="images"></div>
         </div>
     </section>
-    
-
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>jQuery.getJSON demo</title>
-  <style>
-  img {
-    height: 100px;
-    float: left;
-  }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-</head>
-<body>
- 
-<div id="images"></div>
- 
-<script>
-(function() {
-  var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-  $.getJSON( flickerAPI, {
-    tags: "mount rainier",
-    tagmode: "any",
-    format: "json"
-  })
-    .done(function( data ) {
-      $.each( data.items, function( i, item ) {
-        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
-        if ( i === 3 ) {
-          return false;
-        }
-      });
-    });
-})();
-</script>
- 
-</body>
-</html>
-
-
     

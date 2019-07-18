@@ -158,7 +158,7 @@
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$this->session->user_name ?></div>
                     <div class="email"><?=$this->session->user_level ?></div>
                     <div class="btn-group user-helper-dropdown">
-                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">input</i>
                         <ul class="dropdown-menu pull-right">
                             <!-- <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
                             <li role="separator" class="divider"></li>
@@ -166,7 +166,7 @@
                             <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
                             <li role="separator" class="divider"></li> -->
-                            <li><a href="<?=base_url();?>index.php/Auth/logout"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="<?=base_url();?>index.php/Auth/logout"><i class="material-icons">input</i>Keluar</a></li>
                         </ul>
                     </div>
                 </div>
@@ -218,10 +218,17 @@
                             </a>
                         </li>
                         <li>
-                            <a href="<?=base_url();?>index.php/admin/lomba">Lihat Lomba</a>
+                            <a href="<?=base_url();?>index.php/admin/lomba">
+                                <i class="material-icons">home</i>
+                                <span>Lihat Lomba</span>
+                            </a>
                         </li>
                         <li>
-                            <a href="<?=base_url();?>index.php/admin/lomba/permintaan_lomba">Tambah Lomba</a>
+                        <a href="<?=base_url();?>index.php/admin/lomba/permintaan_lomba">
+                                <i class="material-icons">home</i>
+                                <span>Tambah Lomba</span>
+                        </a>
+                            
                         </li>
                     <?php } ?>
                     
