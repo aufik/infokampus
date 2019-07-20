@@ -134,7 +134,7 @@ class Lomba extends CI_Controller {
         }
     }
     public function edit_lomba($param=""){
-        $data['lomba'] = $this->dbObject->get_general_4($param);		
+        $data['lomba'] = $this->dbObject->get_general_edit($param);		
         $this->load->view('admin/templates/header');
 		$this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/footer');

@@ -105,6 +105,8 @@ $(function () {
     <script src="<?=base_url()?>assets/backoffice/js/admin.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/forms/form-validation.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/forms/editors.js"></script>
+    <script src="<?=base_url()?>assets/backoffice/js/pages/forms/editors2.js"></script>
+    <script src="<?=base_url()?>assets/backoffice/js/pages/forms/editors3.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/index.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/forms/basic-form-elements.js"></script>
     <script src="<?=base_url()?>assets/backoffice/js/pages/forms/advanced-form-elements.js"></script>

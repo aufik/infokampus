@@ -179,7 +179,7 @@
                     <li class="header">MAIN NAVIGATION</li>
                     <?php if($this->session->user_level == "admin"){ ?>
                         <li>
-                            <a href="index.html">
+                            <a href="<?=base_url();?>index.php/admin/dashboard">
                                 <i class="material-icons">home</i>
                                 <span>Dashboard</span>
                             </a>
@@ -205,9 +205,16 @@
                                 <span>Team</span>
                             </a>
                         </li>
+                        <li>
                         <a href="<?=base_url();?>index.php/admin/kontak">    
                                 <i class="material-icons">home</i>
                                 <span>Kontak</span>
+                            </a>
+                        </li>
+                        <li>
+                        <a href="<?=base_url();?>index.php/admin/profile/update">    
+                                <i class="material-icons">home</i>
+                                <span>Profile</span>
                             </a>
                         </li>
                     <?php }else{ ?>

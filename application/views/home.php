@@ -8,50 +8,12 @@
 	        		<span class="subheading">Informasi Seputar Pendidikan</span>
 	            <h1 class="mb-3"><span>Prestasi,</span> <span>Inspirasi,</span> <span>Inovasi</span></h1>
 	            <p>Infokampus adalah sebuah Start-up yang berfokus sebagai portal informasi lomba, beasiswa, dan berbagai event kampus, sekolah, dan instansi terkait.</p>
-	            <p><a href="#" class="btn btn-primary px-4 py-3">KERJASAMA</a></p>
+	            <p><a href="<?=base_url();?>index.php/kerjasama" class="btn btn-primary px-4 py-3">KERJASAMA</a></p>
 	          </div>
 	        </div>
 	    	</div>
       </div>
     </div>
-    
-    <section class="ftco-domain">
-    	<div class="container">
-    		<div class="row d-flex align-items-center">
-    			<div class="col-lg-5 heading-white mb-4 mb-sm-4 mb-lg-0 ftco-animate">
-    				<h2>Cari Kategori Lomba</h2>
-    				<p>A small river named Duden flows by their place</p>
-    			</div>
-    			<div class="col-lg-7 p-5 ftco-wrap ftco-animate">
-    				<form action="#" class="domain-form d-flex mb-3">
-              <div class="form-group domain-name">
-                <input type="text" class="form-control name px-4" placeholder="Enter your domain name...">
-              </div>
-              <div class="form-group domain-select d-flex">
-	              <div class="select-wrap">
-                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                  <select name="" id="" class="form-control">
-                  	<option value="">.com</option>
-                    <option value="">.net</option>
-                    <option value="">.biz</option>
-                    <option value="">.co</option>
-                    <option value="">.me</option>
-                  </select>
-                </div>
-                <input type="submit" class="search-domain btn btn-primary text-center" value="Search">
-	            </div>
-            </form>
-            <p class="domain-price mt-2">
-            	<span><small>.com</small> $9.75</span> 
-            	<span><small>.net</small> $9.50</span> 
-            	<span><small>.biz</small> $8.95</span> 
-            	<span><small>.co</small> $7.80</span>
-            	<span><small>.me</small> $7.95</span>
-            </p>
-    			</div>
-    		</div>
-    	</div>
-    </section>
 
     <section class="ftco-section bg-light">
       <div class="container">
@@ -84,7 +46,7 @@
                     <h2 class="mb-4">Next gen VPS hosting</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-                    <p><a href="#" class="btn btn-primary py-3">TEMUKAN</a></p>
+                    <p><a href="<?=base_url();?>index.php/lomba" class="btn btn-primary py-3">TEMUKAN LOMBA</a></p>
                   </div>
                 </div>
               </div>
@@ -98,7 +60,7 @@
                     <h2 class="mb-4">Performance VPS hosting</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-                    <p><a href="#" class="btn btn-primary py-3">TEMUKAN</a></p>
+                    <p><a href="<?=base_url();?>index.php/beasiswa" class="btn btn-primary py-3">TEMUKAN BEASISWA</a></p>
                   </div>
                 </div>
               </div>
@@ -112,7 +74,7 @@
                     <h2 class="mb-4">Effective VPS hosting</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-                    <p><a href="#" class="btn btn-primary py-3">TEMUKAN</a></p>
+                    <p><a href="<?=base_url();?>index.php/events" class="btn btn-primary py-3">TEMUKAN EVENTS</a></p>
                   </div>
                 </div>
               </div>
@@ -121,85 +83,6 @@
         </div>
       </div>
     </section>
-  
-    <section class="ftco-section services-section bg-light">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2 class="mb-4">Why Choose Us</h2>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-flex align-items-center">
-            	<div class="icon d-flex align-items-center justify-content-center order-md-last">
-            		<span class="flaticon-cloud"></span>
-            	</div>
-              <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-right">
-                <h3 class="heading">Super Fast Server</h3>
-                <p class="mb-0">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-flex align-items-center">
-            	<div class="icon d-flex align-items-center justify-content-center">
-            		<span class="flaticon-server"></span>
-            	</div>
-              <div class="media-body pl-4">
-                <h3 class="heading">Daily Backups</h3>
-                <p class="mb-0">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>    
-          </div>
-          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-flex align-items-center">
-            	<div class="icon d-flex align-items-center justify-content-center order-md-last">
-            		<span class="flaticon-customer-service"></span>
-            	</div>
-              <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-right">
-                <h3 class="heading">Technical Services</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>      
-          </div>
-					<div class="col-md-6 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-flex align-items-center">
-            	<div class="icon d-flex align-items-center justify-content-center">
-            		<span class="flaticon-life-insurance"></span>
-            	</div>
-              <div class="media-body pl-4">
-                <h3 class="heading">Secure and Reliable</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-flex align-items-center">
-            	<div class="icon d-flex align-items-center justify-content-center order-md-last">
-            		<span class="flaticon-cloud-computing"></span>
-            	</div>
-              <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-right">
-                <h3 class="heading">DNS Control</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>s
-            </div>    
-          </div>
-          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-flex align-items-center">
-            	<div class="icon d-flex align-items-center justify-content-center">
-            		<span class="flaticon-settings"></span>
-            	</div>
-              <div class="media-body pl-4">
-                <h3 class="heading">24/7 Support</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>      
-          </div>
-        </div>
-      </div>
-    </section>    
 
     <section class="ftco-section ftco-counter img" id="section-counter">
     	<div class="container">
@@ -392,67 +275,6 @@
                     <span class="position">System Analyst</span>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2>Recent Blog</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('<?=base_url()?>assets/frontoffice/images/image_1.jpg');">
-              </a>
-              <div class="text d-flex py-4">
-                <div class="meta mb-3">
-                  <div><a href="#">May 8, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <div class="desc pl-3">
-	                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry" data-aos-delay="100">
-              <a href="blog-single.html" class="block-20" style="background-image: url('<?=base_url()?>assets/frontoffice/images/image_2.jpg');">
-              </a>
-              <div class="text d-flex py-4">
-                <div class="meta mb-3">
-                  <div><a href="#">May 8, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <div class="desc pl-3">
-	                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry" data-aos-delay="200">
-              <a href="blog-single.html" class="block-20" style="background-image: url('<?=base_url()?>assets/frontoffice/images/image_3.jpg');">
-              </a>
-              <div class="text d-flex py-4">
-                <div class="meta mb-3">
-                  <div><a href="#">May 8, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <div class="desc pl-3">
-	                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-	              </div>
               </div>
             </div>
           </div>
