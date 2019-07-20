@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2019 at 04:01 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.6
+-- Generation Time: Jul 20, 2019 at 04:54 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -70,7 +70,7 @@ CREATE TABLE `kontak` (
 
 INSERT INTO `kontak` (`kontak_id`, `kontak_nama`, `kontak_email`, `kontak_hp`, `kontak_pesan`, `kontak_date`, `kontak_status`) VALUES
 (1, 'test', 'taufikkamil522@gmail.com', '082258515288', 'halo salam kenal', '2019-07-18 10:19:36', 'Sudah Dibaca'),
-(2, '', '', '', '', '2019-07-10 00:00:00', 'Belum Dibaca');
+(2, '', '', '', '', '2019-07-10 00:00:00', 'Sudah Dibaca');
 
 -- --------------------------------------------------------
 
@@ -87,8 +87,8 @@ CREATE TABLE `lomba` (
   `lomba_deadline` datetime NOT NULL,
   `lomba_tiket` enum('Gratis','Bayar') NOT NULL,
   `lomba_alamat` varchar(255) NOT NULL,
-  `lomba_created_time` datetime NOT NULL DEFAULT current_timestamp(),
-  `lomba_update_time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `lomba_created_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `lomba_update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `lomba_kat_id` int(11) NOT NULL,
   `lomba_created_by_id` int(11) NOT NULL,
   `lomba_update_by_id` int(11) NOT NULL,
@@ -125,6 +125,56 @@ CREATE TABLE `lomba_kategori` (
 INSERT INTO `lomba_kategori` (`lomba_kategori_id`, `lomba_kategori_nama`) VALUES
 (1, 'Nasional'),
 (2, 'Internasional');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `parameter`
+--
+
+CREATE TABLE `parameter` (
+  `id_pt` int(11) NOT NULL,
+  `nama_pt` varchar(225) NOT NULL,
+  `no_telp` varchar(50) NOT NULL,
+  `alamat` varchar(225) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `tentang` text NOT NULL,
+  `visi` text NOT NULL,
+  `misi` text NOT NULL,
+  `identitas` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `parameter`
+--
+
+INSERT INTO `parameter` (`id_pt`, `nama_pt`, `no_telp`, `alamat`, `email`, `tentang`, `visi`, `misi`, `identitas`) VALUES
+(0, 'PT. BERKAH MULIA FARM', ' (061) 7640663', 'Jl. Sultan Serdang, Batang Kuis Pasar VII Gg. Rotan Tanjung Morawa, Deli Serdang', 'info@bmfarm.com', '<p><strong>PT. BERKAH MULIA BETON</strong>&nbsp;atau masyarakat lebih mengenalnya dengan&nbsp;<strong>PT. BM BETON</strong>&nbsp;merupakan perusahaan Supplier Ready Mix Concrete (beton cor siap pakai) dengan mutu dan harga terbaik sesuai dengan standar nasional untuk pengecoran pada proyek pembangunan skala kecil dan skala besar baik itu struktural maupun non struktural seperti proyek pembangunan jalan raya, jalan komplek/perumahan, jalan tol, jalan setapak, jalan desa, rumah tinggal, toko, supermarket, gedung perkantoran, apartemen, tower, jembatan dan lain-lain.</p>\r\n\r\n<p>PT. BM Beton juga menyewakan berbagai sarana pendukung pengecoran seperti : Pompa Beton (Concrete Pump), Alat Getar (Vibrator), Trowle dan lain-lain. PT. BM Beton juga menerima jasa pesanan pengerjaan proyek seperti proyek pembangunan jalan, pengerjaan rumah tinggal dan lain-lain.</p>\r\n\r\n<p>PT. BM BETON telah beroperasi sejak tahun 2010 dengan mengembangkan pasar readymix concrete diwilayah Medan dan sekitarnya. PT. BM Beton didukung oleh sumber daya manusia yang memiliki team work terbaik, potensial, berkualitas serta pemahaman akan kebutuhan pasar yang kompetitif dan dinamis sejalan dengan pertumbuhan ekonomi khususnya di wilayah Medan.</p>\r\n\r\n<p>Kejujuran, kerja keras, disiplin, dedikasi, integritas dan kerja sama merupakan standar nilai utama yang terus menerus kami bangun untuk menghasilkan sumber daya yang terampil dan berwawasan luas dalam mendukung pelanggan mencapai produktivitas.</p>\r\n', '<blockquote>\r\n<p>&quot;Senantiasa berusaha menjadi perusahaan yang terbaik dan terdepan dalam industry readymix di Indonesia dan juga memberikan kualitas terbaik dalam jasa konstruksi dan investasi untuk memenuhi kepuasan pelanggan, pemegang saham dan karyawan melalui pengembangan SDM, teknologi, proses bisnis internal dan pertumbuhan yang berkesinambungan&quot;</p>\r\n</blockquote>\r\n', '<blockquote>\r\n<ul>\r\n	<li>Menyediakan produk dan jasa yang berkualitas tinggi</li>\r\n	<li>Meningkatkan nilai yang tinggi bagi pemegang saham</li>\r\n	<li>Memenuhi kebutuhan pelanggan dengan produk dan layanan yang handal</li>\r\n	<li>Memberikan lingkungan kerja yang aman dan meningkatkan kesejahteraan dan memberikan kesempatan berkembang bagi karyawan</li>\r\n	<li>Mengembangkan proses bisnis yang efektif dan efisien untuk meningkatkan daya saing</li>\r\n	<li>Meningkatkan hubungan kemitraan dengan mitra kerja atas dasar kesetaraan</li>\r\n	<li>Menjaga lingkungan bisnis dengan menghindari persaingan tidak sehat</li>\r\n	<li>Menjaga keseimbangan lingkungan dengan memperhatikan dampak lingkungan dan masyarakat sekitar</li>\r\n</ul>\r\n</blockquote>\r\n', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profile`
+--
+
+CREATE TABLE `profile` (
+  `id_pt` int(11) NOT NULL,
+  `nama_pt` varchar(255) NOT NULL,
+  `no_telp` varchar(50) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `tentang` text NOT NULL,
+  `visi` text NOT NULL,
+  `misi` text NOT NULL,
+  `identitas` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `profile`
+--
+
+INSERT INTO `profile` (`id_pt`, `nama_pt`, `no_telp`, `alamat`, `email`, `tentang`, `visi`, `misi`, `identitas`) VALUES
+(1, 'INFOKAMPUS', '08951239129', 'Jl.Sei Padang No.76 Kota Medan, Kelurahan Merdeka, Kecamatan Medan Bary', 'md.infokampus@gmail.com', '<p>Infokampus adalah sebuah Start-up yang berfokus sebagai portal informasi lomba, beasiswa, dan berbagai event kampus, sekolah, dan instansi terkait.</p>\r\n', '<p>Infokampus adalah sebuah Start-up yang berfokus sebagai portal informasi lomba, beasiswa, dan berbagai event kampus, sekolah, dan instansi terkait.</p>\r\n', '<p>Infokampus adalah sebuah Start-up yang berfokus sebagai portal informasi lomba, beasiswa, dan berbagai event kampus, sekolah, dan instansi terkait.</p>\r\n', '');
 
 -- --------------------------------------------------------
 
@@ -210,6 +260,18 @@ ALTER TABLE `lomba_kategori`
   ADD PRIMARY KEY (`lomba_kategori_id`);
 
 --
+-- Indexes for table `parameter`
+--
+ALTER TABLE `parameter`
+  ADD PRIMARY KEY (`id_pt`);
+
+--
+-- Indexes for table `profile`
+--
+ALTER TABLE `profile`
+  ADD PRIMARY KEY (`id_pt`);
+
+--
 -- Indexes for table `team`
 --
 ALTER TABLE `team`
@@ -243,6 +305,18 @@ ALTER TABLE `lomba`
 --
 ALTER TABLE `lomba_kategori`
   MODIFY `lomba_kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `parameter`
+--
+ALTER TABLE `parameter`
+  MODIFY `id_pt` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `profile`
+--
+ALTER TABLE `profile`
+  MODIFY `id_pt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `team`
