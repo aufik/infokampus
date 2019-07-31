@@ -16,7 +16,7 @@ class Model_lomba extends CI_Model
     function get_by_id_general($table, $id, $val)
     {
     	$query = $this->db->where($id, $val)->get($table);
-		return $query->result();
+		return $query;
     }
 
 	function create_general($table, $data)

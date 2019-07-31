@@ -1,3 +1,4 @@
+
     <div class="hero-wrap hero-wrap-2" style="background-image: url('<?=base_url()?>assets/frontoffice/images/lomba.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
@@ -13,103 +14,33 @@
     <section class="ftco-section bg-light">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text d-flex py-4">
-                <div class="meta mb-3">
-                  <div><a href="#">May 8, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+          <?php foreach($lomba as $l){ ?>
+            <div class="col-md-4 ftco-animate">
+              <div class="blog-entry">
+                <a href="<?=base_url();?>lomba/<?=$l->lomba_slug?>" class="block-20" style="background-image: url('<?=base_url();?>assets/img/poster/<?=$l->lomba_gambar;?>');" alt="<?php 
+                            if(strlen($l->lomba_judul) >70) {echo $stringCut = substr($l->lomba_judul, 0, 70)."...";}
+                            else{echo $l->lomba_judul;}
+                        ?>">
+                </a>
+                <div class="text d-flex py-4">
+                  <div class="meta mb-3">
+                    <div><a href="#"><?=$l->lomba_deadline;?></a></div>
+                    <div><a href="#">Admin</a></div>
+                    <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                  </div>
+                  <div class="desc pl-3">
+                    <h3 class="heading"><a href="#">
+                    <?php 
+                            if(strlen($l->lomba_judul) >70) {echo $stringCut = substr($l->lomba_judul, 0, 70)."...";}
+                            else{echo $l->lomba_judul;}
+                        ?>
+                      </a></h3>
+                  </div>
                 </div>
-                <div class="desc pl-3">
-	                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-	              </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry" data-aos-delay="100">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text d-flex py-4">
-                <div class="meta mb-3">
-                  <div><a href="#">May 8, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <div class="desc pl-3">
-	                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry" data-aos-delay="200">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-              </a>
-              <div class="text d-flex py-4">
-                <div class="meta mb-3">
-                  <div><a href="#">May 8, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <div class="desc pl-3">
-	                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-	              </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_4.jpg');">
-              </a>
-              <div class="text d-flex py-4">
-                <div class="meta mb-3">
-                  <div><a href="#">May 8, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <div class="desc pl-3">
-	                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry" data-aos-delay="100">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_5.jpg');">
-              </a>
-              <div class="text d-flex py-4">
-                <div class="meta mb-3">
-                  <div><a href="#">May 8, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <div class="desc pl-3">
-	                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry" data-aos-delay="200">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_6.jpg');">
-              </a>
-              <div class="text d-flex py-4">
-                <div class="meta mb-3">
-                  <div><a href="#">May 8, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <div class="desc pl-3">
-	                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-	              </div>
-              </div>
-            </div>
-          </div>
+          <?php } ?>
+          
         </div>
         <div class="row mt-5">
           <div class="col text-center">

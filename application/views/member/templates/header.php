@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
+    <title>Infokampus</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -36,6 +36,7 @@
     <!-- Bootstrap Spinner Css -->
     <link href="<?=base_url()?>assets/backoffice/plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
 
+    
     <!-- Bootstrap Tagsinput Css -->
     <link href="<?=base_url()?>assets/backoffice/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
 

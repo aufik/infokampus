@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2019 at 04:54 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.10
+-- Generation Time: Jul 31, 2019 at 05:47 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -87,8 +87,9 @@ CREATE TABLE `lomba` (
   `lomba_deadline` datetime NOT NULL,
   `lomba_tiket` enum('Gratis','Bayar') NOT NULL,
   `lomba_alamat` varchar(255) NOT NULL,
-  `lomba_created_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `lomba_update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `lomba_slug` varchar(100) NOT NULL,
+  `lomba_created_time` datetime NOT NULL DEFAULT current_timestamp(),
+  `lomba_update_time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `lomba_kat_id` int(11) NOT NULL,
   `lomba_created_by_id` int(11) NOT NULL,
   `lomba_update_by_id` int(11) NOT NULL,
@@ -100,12 +101,9 @@ CREATE TABLE `lomba` (
 -- Dumping data for table `lomba`
 --
 
-INSERT INTO `lomba` (`lomba_id`, `lomba_judul`, `lomba_gambar`, `lomba_isi`, `lomba_link`, `lomba_deadline`, `lomba_tiket`, `lomba_alamat`, `lomba_created_time`, `lomba_update_time`, `lomba_kat_id`, `lomba_created_by_id`, `lomba_update_by_id`, `status`, `lomba_keterangan`) VALUES
-(1, 'ini adalah dunia yang telah kita dia aku kamu situ sana dan yang ada di sini pohon 1 dot png satu satu', 'pohon1.png', 'ini adalah dunia yang telah kita dia aku kamu situ sana dan yang ada di sini pohon 1 dot png satu satu', '1', '2019-07-09 00:00:18', 'Gratis', 'jl. in aja', '2019-07-09 21:04:25', '2019-07-12 20:29:11', 1, 1, 1, 'Diterima', ''),
-(14, '', '', '', '', '0000-00-00 00:00:00', '', '', '2019-07-12 06:03:09', '2019-07-18 15:51:21', 1, 1, 1, 'Ditolak', '<p>maaf Lomba Tidak Jelas, Harap diperbaiki terlebih dahulu</p>'),
-(19, '14', 'oil-bottle7.png', '<p>14</p>', '4', '2020-07-18 00:00:00', '', '4', '2019-07-17 02:30:05', '2019-07-18 14:53:08', 1, 6, 6, 'Diterima', ''),
-(24, '1', 'index.jpg', '<p>1111</p>', '1', '0000-00-00 00:00:00', '', '1', '2019-07-17 03:20:08', '2019-07-18 15:45:46', 1, 6, 6, 'Ditolak', ''),
-(25, '2', 'crude_palm_oil_23.jpg', '<p>2</p>', '2', '2020-02-02 14:02:00', '', '2', '2019-07-17 03:22:21', '2019-07-18 15:49:48', 1, 6, 6, 'Ditolak', '<p>maaf Lomba Tidak Jelas, Harap diperbaiki terlebih dahulu</p>');
+INSERT INTO `lomba` (`lomba_id`, `lomba_judul`, `lomba_gambar`, `lomba_isi`, `lomba_link`, `lomba_deadline`, `lomba_tiket`, `lomba_alamat`, `lomba_slug`, `lomba_created_time`, `lomba_update_time`, `lomba_kat_id`, `lomba_created_by_id`, `lomba_update_by_id`, `status`, `lomba_keterangan`) VALUES
+(27, 'lomba membuat rumah ditangan', 'e_9.jpg', '<p>ikutilah beramai ramai isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang&nbsp;isinya panjang</p>', 'www.urlnyananti.com', '0000-00-00 00:00:00', '', 'jl. studikasus no 1', 'lomba-membuat-rumah-ditangan', '2019-07-27 10:08:43', '2019-07-27 15:09:00', 1, 1, 1, 'Diterima', ''),
+(28, 'minyak', 'drop.png', '<p>lomba membuat minyak dari bahan yang mudah digunakan</p>', 'www.minyak.com', '3333-03-03 15:33:00', '', 'jl. keminyakan no 3', '', '2019-07-28 03:50:00', '2019-07-31 20:53:43', 1, 6, 6, 'Ditolak', '<p>buatlah deskripsi lebih jelas</p>');
 
 -- --------------------------------------------------------
 
@@ -298,7 +296,7 @@ ALTER TABLE `kontak`
 -- AUTO_INCREMENT for table `lomba`
 --
 ALTER TABLE `lomba`
-  MODIFY `lomba_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `lomba_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `lomba_kategori`

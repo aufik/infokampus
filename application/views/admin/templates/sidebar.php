@@ -34,7 +34,7 @@
                     
                     <!-- #END# Call Search -->
                     <!-- Notifications -->
-                    <li class="dropdown">
+                    <!-- <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="material-icons">notifications</i>
                             <span class="label-count">7</span>
@@ -140,7 +140,7 @@
                                 <a href="javascript:void(0);">View All Notifications</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <!-- #END# Notifications --> 
             </div>
         </div>
@@ -201,43 +201,23 @@
                         </li>
                         <li>
                         <a href="<?=base_url();?>index.php/admin/team">    
-                                <i class="material-icons">home</i>
+                                <i class="material-icons">group</i>
                                 <span>Team</span>
                             </a>
                         </li>
                         <li>
                         <a href="<?=base_url();?>index.php/admin/kontak">    
-                                <i class="material-icons">home</i>
+                                <i class="material-icons">comment</i>
                                 <span>Kontak</span>
                             </a>
                         </li>
                         <li>
                         <a href="<?=base_url();?>index.php/admin/profile/update">    
-                                <i class="material-icons">home</i>
+                                <i class="material-icons">person</i>
                                 <span>Profile</span>
                             </a>
                         </li>
-                    <?php }else{ ?>
-                        <li>
-                            <a href="index.html">
-                                <i class="material-icons">home</i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?=base_url();?>index.php/admin/lomba">
-                                <i class="material-icons">home</i>
-                                <span>Lihat Lomba</span>
-                            </a>
-                        </li>
-                        <li>
-                        <a href="<?=base_url();?>index.php/admin/lomba/permintaan_lomba">
-                                <i class="material-icons">home</i>
-                                <span>Tambah Lomba</span>
-                        </a>
-                            
-                        </li>
-                    <?php } ?>
+                    <?php }?>
                     
                 </ul>
             </div>

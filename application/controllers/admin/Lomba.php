@@ -109,10 +109,21 @@ class Lomba extends CI_Controller {
     public function penentuan($param="", $param2=""){
         
         $lomba_keterangan=trim($this->input->post('keterangan'));
+        if($param2 == "Diterima"){
+            $judul = $this->dbObject->get_by_id_general($this->lomba, 'lomba_id', $param)->row();
+            
+            $slugg = strtolower(url_title($judul->lomba_judul));
+            $data = array(
+                'lomba_slug' => $slugg,
+                'status' => $param2,
+                'lomba_keterangan'=>$lomba_keterangan
+            );    
+        }else{
         $data = array(
             'status' => $param2,
             'lomba_keterangan'=>$lomba_keterangan
         );
+        }
         if($this->dbObject->update_general($this->lomba, 'lomba_id', $param, $data )===TRUE)		// using direct parameter
         {
             ?>

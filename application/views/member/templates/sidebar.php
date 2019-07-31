@@ -179,20 +179,20 @@
                     <li class="header">MAIN NAVIGATION</li>
                     
                         <li>
-                            <a href="index.html">
+                        <a href="<?=base_url();?>member/dashboard">
                                 <i class="material-icons">home</i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li>
-                            <a href="<?=base_url();?>index.php/member/lomba">
-                                <i class="material-icons">home</i>
+                            <a href="<?=base_url();?>member/lomba">
+                                <i class="material-icons">list_alt</i>
                                 <span>Lihat Lomba</span>
                             </a>
                         </li>
                         <li>
-                        <a href="<?=base_url();?>index.php/member/lomba/tambah">
-                                <i class="material-icons">home</i>
+                        <a href="<?=base_url();?>member/lomba/tambah">
+                                <i class="material-icons">add</i>
                                 <span>Tambah Lomba</span>
                         </a>
                             

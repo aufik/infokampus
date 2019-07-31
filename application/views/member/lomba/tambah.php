@@ -220,7 +220,7 @@
                                     }
                                 }
                             </script>
-                            <img id="preview" src="" alt="" width="170px" style="border:2px solid black;display: block;margin-left: auto;margin-right: auto;"/>
+                            <img id="preview" src="" alt="" width="170px" style="display: block;margin-left: auto;margin-right: auto;"/>
                             <div class="form-group form-float">
                             <label class="form-label">Poster</label>
                                     <div class="form-line">
@@ -231,7 +231,7 @@
                                 <div class="form-group form-float">
                                 <label class="form-label">Judul</label>
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="lomba_judul" maxlength="255" minlength="1" required>
+                                        <input type="text" class="form-control" name="lomba_judul" maxlength="70" minlength="1" required>
                                         
                                     </div>
                                     <div class="help-info">Min. 1, Max. 255 characters</div>
